@@ -1,0 +1,3 @@
+"CRRefreshHeaderIdleText" = "下拉可以刷新";
+"CRRefreshHeaderPullingText" = "松开立即刷新";
+"CRRefreshHeaderRefreshingText" = "正在刷新数据中...";
