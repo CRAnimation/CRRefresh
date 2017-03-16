@@ -70,11 +70,11 @@ public struct CRRefreshDSL: CRRefreshViewProtocol {
     
     public func noticeNoMoreData() {
         footer?.endRefreshing()
-        footer?.noMoreData = true
+        footer?.noticeNoMoreData()
     }
     
     public func resetNoMore() {
-        footer?.noMoreData = false
+        footer?.resetNoMoreData()
     }
     
     public func endLoadingMore() {

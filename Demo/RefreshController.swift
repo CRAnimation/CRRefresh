@@ -68,6 +68,7 @@ class RefreshController: BaseViewController {
                 self?.count = 10
                 self?.tableView.reloadData()
                 self?.tableView.cr.endHeaderRefresh()
+                self?.tableView.cr.resetNoMore()
             })
         }
         
@@ -78,7 +79,7 @@ class RefreshController: BaseViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                 self?.count += 10
                 self?.tableView.reloadData()
-                self?.tableView.cr.endLoadingMore()
+                self?.tableView.cr.noticeNoMoreData()
             })
         }
     }

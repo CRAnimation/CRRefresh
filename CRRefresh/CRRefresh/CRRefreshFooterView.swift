@@ -149,11 +149,12 @@ open class CRRefreshFooterView: CRRefreshComponent {
     }
     
     open func noticeNoMoreData() {
-        self.noMoreData = true
+        noMoreData = true
+        self.state = .noMoreData
     }
     
     open func resetNoMoreData() {
-        self.noMoreData = false
+        noMoreData = false
     }
 
 }

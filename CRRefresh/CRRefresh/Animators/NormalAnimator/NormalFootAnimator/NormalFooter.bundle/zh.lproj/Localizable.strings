@@ -1,4 +1,4 @@
 "CRRefreshFooterIdleText" = "上拉加载更多";
-"CRRefreshFooterNoMoreText" = "已经全部加载完毕";
+"CRRefreshFooterNoMoreText" = "没有更多数据";
 "CRRefreshFooterRefreshingText" = "正在加载更多的数据...";
 

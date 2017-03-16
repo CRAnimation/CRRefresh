@@ -94,7 +94,7 @@ open class NormalFooterAnimator: UIView, CRRefreshProtocol {
         default:
             break
         }
-        self.setNeedsLayout()
+        setNeedsLayout()
     }
     
     open override func layoutSubviews() {

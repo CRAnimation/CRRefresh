@@ -50,9 +50,11 @@ open class CRRefreshComponent: UIView {
     
     open var animator: CRRefreshProtocol!
     
-    open var state: CRRefreshState        = .idle {
+    open var state: CRRefreshState = .idle {
         didSet {
-            animator.refresh(view: self, stateDidChange: state)
+            DispatchQueue.main.async {
+                self.animator.refresh(view: self, stateDidChange: self.state)
+            }
         }
     }
     
