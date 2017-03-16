@@ -34,6 +34,10 @@
 		9753C6971E76A1D500CCBBA0 /* RefreshCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9753C6931E76A1D500CCBBA0 /* RefreshCell.xib */; };
 		9753C6981E76A28300CCBBA0 /* CRRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9753C6461E76A0D200CCBBA0 /* CRRefresh.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		9753C69D1E76A4EE00CCBBA0 /* CRRefresh.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9753C6461E76A0D200CCBBA0 /* CRRefresh.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9753C6A01E76B36300CCBBA0 /* RamotionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9753C69F1E76B36300CCBBA0 /* RamotionAnimator.swift */; };
+		9753C6A81E76F88A00CCBBA0 /* RamotionWaveLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9753C6A71E76F88A00CCBBA0 /* RamotionWaveLayer.swift */; };
+		9753C6AA1E77755600CCBBA0 /* RamotionBounceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9753C6A91E77755600CCBBA0 /* RamotionBounceLayer.swift */; };
+		9753C6AC1E77C2E000CCBBA0 /* RamotionBallLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9753C6AB1E77C2E000CCBBA0 /* RamotionBallLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,6 +83,10 @@
 		9753C6911E76A1D500CCBBA0 /* NormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NormalCell.xib; sourceTree = "<group>"; };
 		9753C6921E76A1D500CCBBA0 /* RefreshCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshCell.swift; sourceTree = "<group>"; };
 		9753C6931E76A1D500CCBBA0 /* RefreshCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefreshCell.xib; sourceTree = "<group>"; };
+		9753C69F1E76B36300CCBBA0 /* RamotionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RamotionAnimator.swift; sourceTree = "<group>"; };
+		9753C6A71E76F88A00CCBBA0 /* RamotionWaveLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RamotionWaveLayer.swift; sourceTree = "<group>"; };
+		9753C6A91E77755600CCBBA0 /* RamotionBounceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RamotionBounceLayer.swift; sourceTree = "<group>"; };
+		9753C6AB1E77C2E000CCBBA0 /* RamotionBallLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RamotionBallLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +154,7 @@
 		9753C6521E76A12A00CCBBA0 /* Animators */ = {
 			isa = PBXGroup;
 			children = (
+				9753C69E1E76B35600CCBBA0 /* RamotionAnimator */,
 				9753C6531E76A12A00CCBBA0 /* NormalAnimator */,
 				9753C65A1E76A12A00CCBBA0 /* SlackLoadingAnimator */,
 			);
@@ -213,6 +222,17 @@
 				9753C6931E76A1D500CCBBA0 /* RefreshCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		9753C69E1E76B35600CCBBA0 /* RamotionAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				9753C69F1E76B36300CCBBA0 /* RamotionAnimator.swift */,
+				9753C6A91E77755600CCBBA0 /* RamotionBounceLayer.swift */,
+				9753C6A71E76F88A00CCBBA0 /* RamotionWaveLayer.swift */,
+				9753C6AB1E77C2E000CCBBA0 /* RamotionBallLayer.swift */,
+			);
+			path = RamotionAnimator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,15 +355,19 @@
 			files = (
 				9753C66C1E76A12A00CCBBA0 /* CRRefreshBundle.swift in Sources */,
 				9753C66B1E76A12A00CCBBA0 /* CRRefreshAnimator.swift in Sources */,
+				9753C6A01E76B36300CCBBA0 /* RamotionAnimator.swift in Sources */,
+				9753C6AC1E77C2E000CCBBA0 /* RamotionBallLayer.swift in Sources */,
 				9753C6681E76A12A00CCBBA0 /* NormalHeaderAnimator.swift in Sources */,
 				9753C6691E76A12A00CCBBA0 /* SlackLoadingAnimator.swift in Sources */,
 				9753C66E1E76A12A00CCBBA0 /* CRRefreshExtension.swift in Sources */,
 				9753C66D1E76A12A00CCBBA0 /* CRRefreshComponent.swift in Sources */,
 				9753C6701E76A12A00CCBBA0 /* CRRefreshHeaderView.swift in Sources */,
 				9753C66A1E76A12A00CCBBA0 /* WCLLoadingView.swift in Sources */,
+				9753C6A81E76F88A00CCBBA0 /* RamotionWaveLayer.swift in Sources */,
 				9753C66F1E76A12A00CCBBA0 /* CRRefreshFooterView.swift in Sources */,
 				9753C6711E76A12A00CCBBA0 /* CRRefreshProtocol.swift in Sources */,
 				9753C6661E76A12A00CCBBA0 /* NormalFooterAnimator.swift in Sources */,
+				9753C6AA1E77755600CCBBA0 /* RamotionBounceLayer.swift in Sources */,
 				9753C6721E76A12A00CCBBA0 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,6 +584,7 @@
 				9753C6501E76A0D200CCBBA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9753C6861E76A13C00CCBBA0 /* Build configuration list for PBXNativeTarget "Demo" */ = {
 			isa = XCConfigurationList;
@@ -568,6 +593,7 @@
 				9753C6881E76A13C00CCBBA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

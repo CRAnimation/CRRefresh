@@ -19,7 +19,9 @@ class ViewController: BaseViewController {
     var refreshs: [Refresh] = [
         Refresh(model: .init(icon: #imageLiteral(resourceName: "Image_1"), title: "NormalAnimator", subTitle: "普通刷新控件"), header: .nomalHead, footer: .nomalFoot),
         Refresh(model: .init(icon: #imageLiteral(resourceName: "Image_2"), title: "SlackLoadingAnimator", subTitle: "SlackLoading的刷新控件"), header: .slackLoading, footer: .slackLoading),
+        Refresh(model: .init(icon: #imageLiteral(resourceName: "Image_3"), title: "RamotionAnimator", subTitle: "Ramotion的刷新控件"), header: .ramotion, footer: .nomalFoot)
     ]
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,6 +93,8 @@ struct Refresh {
         case nomalFoot
         // slackLoading刷新控件
         case slackLoading
+        // ramotion动画
+        case ramotion
         
         func commont() -> CRRefreshProtocol {
             switch self {
@@ -100,6 +104,8 @@ struct Refresh {
                 return NormalFooterAnimator()
             case .slackLoading:
                 return SlackLoadingAnimator()
+            case .ramotion:
+                return RamotionAnimator()
             }
         }
     }

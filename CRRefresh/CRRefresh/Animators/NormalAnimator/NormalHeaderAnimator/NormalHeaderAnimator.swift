@@ -129,7 +129,7 @@ open class NormalHeaderAnimator: UIView, CRRefreshProtocol {
 
     open override func layoutSubviews() {
         super.layoutSubviews()
-        let s = self.bounds.size
+        let s = bounds.size
         let w = s.width
         let h = s.height
         

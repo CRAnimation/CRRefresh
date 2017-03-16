@@ -62,10 +62,6 @@ open class CRRefreshComponent: UIView {
     
     fileprivate(set) var isRefreshing     = false
     
-    deinit {
-        print("sdsd")
-    }
-    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         autoresizingMask = [.flexibleLeftMargin, .flexibleWidth, .flexibleRightMargin]
