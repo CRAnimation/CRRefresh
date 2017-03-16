@@ -88,7 +88,6 @@ class RamotionWaveLayer: CALayer, CAAnimationDelegate {
     //MARK: Public Methods
     func wave(_ y: CGFloat, execute: CGFloat) {
         self.execute = execute
-        let w = frame.size.width
         waveLayer.path = wavePath(x: 0, y: y)
         if !isAnimation {
             var trans = CGAffineTransform.identity
