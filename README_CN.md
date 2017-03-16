@@ -2,7 +2,7 @@
 [![License](https://img.shields.io/cocoapods/l/WCLShineButton.svg?style=flat)](http://cocoapods.org/pods/WCLShineButton)
 [![Platform](https://img.shields.io/cocoapods/p/WCLShineButton.svg?style=flat)](http://cocoapods.org/pods/WCLShineButton)
 [![Support](https://img.shields.io/badge/support-iOS%208%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/) 
-![Language](https://img.shields.io/badge/Language-%20swift%20%20-blue.svg)
+![Language](https://img.shields.io/badge/Language-%20swift 3.0%20%20-blue.svg)
 
 ![](CRRefresh.png)
 

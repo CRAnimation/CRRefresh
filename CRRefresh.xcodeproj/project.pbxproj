@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9753C6651E76A12A00CCBBA0 /* NormalFooter.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9753C6551E76A12A00CCBBA0 /* NormalFooter.bundle */; };
-		9753C6661E76A12A00CCBBA0 /* NormalFooterAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9753C6561E76A12A00CCBBA0 /* NormalFooterAnimator.swift */; };
-		9753C6671E76A12A00CCBBA0 /* NormalHeader.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9753C6581E76A12A00CCBBA0 /* NormalHeader.bundle */; };
-		9753C6681E76A12A00CCBBA0 /* NormalHeaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9753C6591E76A12A00CCBBA0 /* NormalHeaderAnimator.swift */; };
+		9702BC8A1E7A8F1800705296 /* NormalFooter.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9702BC861E7A8F1800705296 /* NormalFooter.bundle */; };
+		9702BC8B1E7A8F1800705296 /* NormalFooterAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9702BC871E7A8F1800705296 /* NormalFooterAnimator.swift */; };
+		9702BC8C1E7A8F1800705296 /* NormalHeader.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9702BC881E7A8F1800705296 /* NormalHeader.bundle */; };
+		9702BC8D1E7A8F1800705296 /* NormalHeaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9702BC891E7A8F1800705296 /* NormalHeaderAnimator.swift */; };
 		9753C6691E76A12A00CCBBA0 /* SlackLoadingAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9753C65B1E76A12A00CCBBA0 /* SlackLoadingAnimator.swift */; };
 		9753C66A1E76A12A00CCBBA0 /* WCLLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9753C65C1E76A12A00CCBBA0 /* WCLLoadingView.swift */; };
 		9753C66B1E76A12A00CCBBA0 /* CRRefreshAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9753C65D1E76A12A00CCBBA0 /* CRRefreshAnimator.swift */; };
@@ -54,12 +54,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9702BC861E7A8F1800705296 /* NormalFooter.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NormalFooter.bundle; sourceTree = "<group>"; };
+		9702BC871E7A8F1800705296 /* NormalFooterAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalFooterAnimator.swift; sourceTree = "<group>"; };
+		9702BC881E7A8F1800705296 /* NormalHeader.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NormalHeader.bundle; sourceTree = "<group>"; };
+		9702BC891E7A8F1800705296 /* NormalHeaderAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalHeaderAnimator.swift; sourceTree = "<group>"; };
 		9753C6461E76A0D200CCBBA0 /* CRRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CRRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9753C64A1E76A0D200CCBBA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9753C6551E76A12A00CCBBA0 /* NormalFooter.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NormalFooter.bundle; sourceTree = "<group>"; };
-		9753C6561E76A12A00CCBBA0 /* NormalFooterAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalFooterAnimator.swift; sourceTree = "<group>"; };
-		9753C6581E76A12A00CCBBA0 /* NormalHeader.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NormalHeader.bundle; sourceTree = "<group>"; };
-		9753C6591E76A12A00CCBBA0 /* NormalHeaderAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalHeaderAnimator.swift; sourceTree = "<group>"; };
 		9753C65B1E76A12A00CCBBA0 /* SlackLoadingAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlackLoadingAnimator.swift; sourceTree = "<group>"; };
 		9753C65C1E76A12A00CCBBA0 /* WCLLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCLLoadingView.swift; sourceTree = "<group>"; };
 		9753C65D1E76A12A00CCBBA0 /* CRRefreshAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRRefreshAnimator.swift; sourceTree = "<group>"; };
@@ -164,28 +164,12 @@
 		9753C6531E76A12A00CCBBA0 /* NormalAnimator */ = {
 			isa = PBXGroup;
 			children = (
-				9753C6541E76A12A00CCBBA0 /* NormalFootAnimator */,
-				9753C6571E76A12A00CCBBA0 /* NormalHeaderAnimator */,
+				9702BC861E7A8F1800705296 /* NormalFooter.bundle */,
+				9702BC871E7A8F1800705296 /* NormalFooterAnimator.swift */,
+				9702BC881E7A8F1800705296 /* NormalHeader.bundle */,
+				9702BC891E7A8F1800705296 /* NormalHeaderAnimator.swift */,
 			);
 			path = NormalAnimator;
-			sourceTree = "<group>";
-		};
-		9753C6541E76A12A00CCBBA0 /* NormalFootAnimator */ = {
-			isa = PBXGroup;
-			children = (
-				9753C6551E76A12A00CCBBA0 /* NormalFooter.bundle */,
-				9753C6561E76A12A00CCBBA0 /* NormalFooterAnimator.swift */,
-			);
-			path = NormalFootAnimator;
-			sourceTree = "<group>";
-		};
-		9753C6571E76A12A00CCBBA0 /* NormalHeaderAnimator */ = {
-			isa = PBXGroup;
-			children = (
-				9753C6581E76A12A00CCBBA0 /* NormalHeader.bundle */,
-				9753C6591E76A12A00CCBBA0 /* NormalHeaderAnimator.swift */,
-			);
-			path = NormalHeaderAnimator;
 			sourceTree = "<group>";
 		};
 		9753C65A1E76A12A00CCBBA0 /* SlackLoadingAnimator */ = {
@@ -330,8 +314,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9753C6651E76A12A00CCBBA0 /* NormalFooter.bundle in Resources */,
-				9753C6671E76A12A00CCBBA0 /* NormalHeader.bundle in Resources */,
+				9702BC8A1E7A8F1800705296 /* NormalFooter.bundle in Resources */,
+				9702BC8C1E7A8F1800705296 /* NormalHeader.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,9 +339,10 @@
 			files = (
 				9753C66C1E76A12A00CCBBA0 /* CRRefreshBundle.swift in Sources */,
 				9753C66B1E76A12A00CCBBA0 /* CRRefreshAnimator.swift in Sources */,
+				9702BC8D1E7A8F1800705296 /* NormalHeaderAnimator.swift in Sources */,
 				9753C6A01E76B36300CCBBA0 /* RamotionAnimator.swift in Sources */,
 				9753C6AC1E77C2E000CCBBA0 /* RamotionBallLayer.swift in Sources */,
-				9753C6681E76A12A00CCBBA0 /* NormalHeaderAnimator.swift in Sources */,
+				9702BC8B1E7A8F1800705296 /* NormalFooterAnimator.swift in Sources */,
 				9753C6691E76A12A00CCBBA0 /* SlackLoadingAnimator.swift in Sources */,
 				9753C66E1E76A12A00CCBBA0 /* CRRefreshExtension.swift in Sources */,
 				9753C66D1E76A12A00CCBBA0 /* CRRefreshComponent.swift in Sources */,
@@ -366,7 +351,6 @@
 				9753C6A81E76F88A00CCBBA0 /* RamotionWaveLayer.swift in Sources */,
 				9753C66F1E76A12A00CCBBA0 /* CRRefreshFooterView.swift in Sources */,
 				9753C6711E76A12A00CCBBA0 /* CRRefreshProtocol.swift in Sources */,
-				9753C6661E76A12A00CCBBA0 /* NormalFooterAnimator.swift in Sources */,
 				9753C6AA1E77755600CCBBA0 /* RamotionBounceLayer.swift in Sources */,
 				9753C6721E76A12A00CCBBA0 /* UIColorExtension.swift in Sources */,
 			);
