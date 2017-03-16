@@ -1,6 +1,6 @@
-[![Version](https://img.shields.io/cocoapods/v/CRRefresh.svg?style=flat)](http://cocoapods.org/pods/WCLShineButton)
-[![License](https://img.shields.io/cocoapods/l/CRRefresh.svg?style=flat)](http://cocoapods.org/pods/WCLShineButton)
-[![Platform](https://img.shields.io/cocoapods/p/CRRefresh.svg?style=flat)](http://cocoapods.org/pods/WCLShineButton)
+[![Version](https://img.shields.io/cocoapods/v/CRRefresh.svg?style=flat)](http://cocoapods.org/pods/CRRefresh)
+[![License](https://img.shields.io/cocoapods/l/CRRefresh.svg?style=flat)](http://cocoapods.org/pods/CRRefresh)
+[![Platform](https://img.shields.io/cocoapods/p/CRRefresh.svg?style=flat)](http://cocoapods.org/pods/CRRefresh)
 [![Support](https://img.shields.io/badge/support-iOS%208%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/) 
 ![Language](https://img.shields.io/badge/Language-%20swift%20%20-blue.svg)
 
