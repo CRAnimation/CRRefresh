@@ -33,7 +33,9 @@
 
 ### CocoaPods
 
-
+```ruby
+pod 'CRRefresh'
+```
 
 ### Manually
 
