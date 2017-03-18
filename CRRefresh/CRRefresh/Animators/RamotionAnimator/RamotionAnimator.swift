@@ -36,12 +36,27 @@ public class RamotionAnimator: UIView, CRRefreshProtocol {
     public var execute: CGFloat = 90
     
     var bounceLayer: RamotionBounceLayer?
+    /// 上方wave的颜色
+    let waveColor: UIColor
+    /// 球的颜色
+    let ballColor: UIColor
+    
+    /// 初始化方法
+    ///
+    /// - Parameters:
+    ///   - ballColor: 小球的颜色
+    ///   - waveColor: 上方wave的颜色
+    public init(ballColor: UIColor = .white, waveColor: UIColor = .init(rgba: "#8C8DB2")) {
+        self.ballColor = ballColor
+        self.waveColor = waveColor
+        super.init(frame: .zero)
+    }
     
     func bounceLayer(view: CRRefreshComponent) -> RamotionBounceLayer? {
         if bounceLayer?.superlayer == nil {
             if let scrollView = view.scrollView {
-                scrollView.backgroundColor = .white
-                bounceLayer = RamotionBounceLayer(frame: scrollView.bounds, execute: execute)
+                scrollView.backgroundColor = waveColor
+                bounceLayer = RamotionBounceLayer(frame: scrollView.bounds, execute: execute, ballColor: ballColor, waveColor: waveColor)
                 if let superView = scrollView.superview {
                     superView.layer.addSublayer(bounceLayer!)
                 }
@@ -59,6 +74,8 @@ public class RamotionAnimator: UIView, CRRefreshProtocol {
         if !finish {
             bounceLayer(view: view)?.endAnimation()
         }else {
+            bounceLayer(view: view)?.ballLayer.isHidden = true
+            bounceLayer(view: view)?.linkLayer.isHidden = true
             bounceLayer(view: view)?.wavelayer.endAnimation()
         }
     }
@@ -73,6 +90,8 @@ public class RamotionAnimator: UIView, CRRefreshProtocol {
     }
     
     override init(frame: CGRect) {
+        self.ballColor = .white
+        self.waveColor = .init(rgba: "#8C8DB2")
         super.init(frame: frame)
     }
     

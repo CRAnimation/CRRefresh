@@ -51,7 +51,7 @@ class RamotionWaveLayer: CALayer, CAAnimationDelegate {
     }
     
     //MARK: Initial Methods
-    init(frame: CGRect, execute: CGFloat, bounceDuration: CFTimeInterval = 3.45, color: UIColor = UIColor(rgba: "#8C8DB2")) {
+    init(frame: CGRect, execute: CGFloat, bounceDuration: CFTimeInterval = 0.45, color: UIColor = UIColor(rgba: "#8C8DB2")) {
         self.bounceDuration = bounceDuration
         self.color = color
         self.execute = execute

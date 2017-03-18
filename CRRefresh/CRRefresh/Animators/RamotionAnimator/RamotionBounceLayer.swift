@@ -40,8 +40,12 @@ class RamotionBounceLayer: CALayer {
     var execute: CGFloat = 0
     // 计时器
     var displayLink: CADisplayLink?
-    // 
+    // 记录之前的offY
     private var previousOffY: CGFloat = 0
+    /// 上方wave的颜色
+    let waveColor: UIColor
+    /// 球的颜色
+    let ballColor: UIColor
     
     deinit {
         displayLink?.invalidate()
@@ -49,15 +53,17 @@ class RamotionBounceLayer: CALayer {
     }
 
     //MARK: Initial Methods
-    init(frame: CGRect, execute: CGFloat) {
-        self.execute = execute
-        wavelayer = .init(frame: .init(origin: .zero, size: frame.size), execute: execute, bounceDuration: animDuration)
-        ballLayer = .init(frame: .init(x: frame.width/2 - 20, y: execute + 40, width: 40, height: 40), duration: animDuration, moveUpDist: 60 + execute/2, color: .white)
-        linkLayer.fillColor = UIColor.white.cgColor
+    init(frame: CGRect, execute: CGFloat, ballColor: UIColor, waveColor: UIColor) {
+        self.waveColor = waveColor
+        self.ballColor = ballColor
+        self.execute  = execute
+        wavelayer = .init(frame: .init(origin: .zero, size: frame.size), execute: execute, bounceDuration: animDuration, color: waveColor)
+        ballLayer = .init(frame: .init(x: frame.width/2 - 20, y: execute + 40, width: 40, height: 40), duration: animDuration, moveUpDist: 60 + execute/2, color: ballColor)
+        linkLayer.fillColor = ballColor.cgColor
         super.init()
         backgroundColor = UIColor.clear.cgColor
         backLayer.frame = .init(origin: .zero, size: frame.size)
-        backLayer.backgroundColor = UIColor.white.cgColor
+        backLayer.backgroundColor = ballColor.cgColor
         backLayer.opacity = 0
         addSublayer(backLayer)
         addSublayer(wavelayer)
@@ -88,8 +94,6 @@ class RamotionBounceLayer: CALayer {
     func endAnimation() {
         ballLayer.endAnimation { [weak self] in
             self?.removeDisPlay()
-            self?.ballLayer.isHidden = true
-            self?.linkLayer.isHidden = true
             self?.wave(0)
         }
     }
