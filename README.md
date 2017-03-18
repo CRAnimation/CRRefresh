@@ -6,7 +6,7 @@
 
 ![](CRRefresh.png)
 
-**CRRefresh** an easy way to use pull-to-refresh, If you want to customize its UI style, you just need conform the specified protocol. We will not regularly updated some nice dynamic effect, at the same time also welcome to write to me ~
+**CRRefresh** an easy way to use pull-to-refresh, If you want to customize its UI style, you just need conform the specified protocol. We will not regularly updated some nice dynamic effect, at the same time also welcome to write to me ~ 
 
 [中文介绍](README_CN.md) / [博客介绍](http://blog.csdn.net/wang631106979/article/details/62888435)
 
