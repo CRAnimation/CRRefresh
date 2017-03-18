@@ -8,7 +8,7 @@
 
 **CRRefresh** 是一个简单易用的上拉刷新控件，你可以高度自定义UI样式，我们会不定期更新一些好看的动效，同时也欢迎大家投稿~~
 
-[英文介绍](README.md)/[博客介绍](http://blog.csdn.net/wang631106979/article/details/62888435)
+[英文介绍](README.md) / [博客介绍](http://blog.csdn.net/wang631106979/article/details/62888435)
 
 ## 效果图
 
