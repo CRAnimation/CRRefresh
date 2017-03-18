@@ -37,6 +37,14 @@
 pod 'CRRefresh'
 ```
 
+### Carthage
+
+使用Carthage安装
+
+1. 在`Cartfile`中添加`github "CRAnimation/CRRefresh"`
+2. 执行`carthage update`
+3. 导入`CRRefresh.framework`
+
 ### 手动安装
 
 1. 下载最新版本的代码

@@ -33,9 +33,28 @@
 
 ### CocoaPods
 
+CocoaPods is the recommended way to add CRRefresh to your project.
+
+Add a pod entry for CRRefresh to your Podfile.
+
 ```ruby
 pod 'CRRefresh'
 ```
+
+Second, install CRRefresh into your project:
+
+```ruby
+pod install
+```
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate `CRRefresh` into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```
+github "CRAnimation/CRRefresh"
+```
+
+Run `carthage update` to build the framework and drag the built `CRRefresh.framework` (in Carthage/Build/iOS folder) into your Xcode project (Linked Frameworks and Libraries in `Targets`).
 
 ### Manually
 
