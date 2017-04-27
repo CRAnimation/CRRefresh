@@ -38,6 +38,7 @@ open class NormalFooterAnimator: UIView, CRRefreshProtocol {
     open var insets: UIEdgeInsets   = .zero
     open var trigger: CGFloat       = 50.0
     open var execute: CGFloat       = 50.0
+    open var endDelay: CGFloat = 0
     
     fileprivate let titleLabel: UILabel = {
         let label = UILabel.init(frame: CGRect.zero)
@@ -68,6 +69,10 @@ open class NormalFooterAnimator: UIView, CRRefreshProtocol {
         indicatorView.startAnimating()
         titleLabel.text = loadingDescription
         indicatorView.isHidden = false
+    }
+    
+    public func refreshWillEnd(view: CRRefreshComponent) {
+        
     }
     
     open func refreshEnd(view: CRRefreshComponent, finish: Bool) {

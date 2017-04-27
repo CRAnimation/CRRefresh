@@ -35,6 +35,8 @@ public class SlackLoadingAnimator: UIView, CRRefreshProtocol {
     
     public var execute: CGFloat = 60
     
+    public var endDelay: CGFloat = 0
+    
     var loadingView: WCLLoadingView = {
         let loadView = WCLLoadingView(frame: .init(x: 0, y: 0, width: 40, height: 40))
         loadView.isUserInteractionEnabled = false
@@ -55,6 +57,10 @@ public class SlackLoadingAnimator: UIView, CRRefreshProtocol {
     
     public func refresh(view: CRRefreshComponent, stateDidChange state: CRRefreshState) {
         
+    }
+    
+    public func refreshWillEnd(view: CRRefreshComponent) {
+    
     }
     
     override init(frame: CGRect) {

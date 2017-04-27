@@ -294,7 +294,7 @@ class WCLLoadingView: UIView, CAAnimationDelegate {
     }
     
     private func angle(_ angle: Double) -> CGFloat {
-        return CGFloat(angle *  (M_PI/180))
+        return CGFloat(angle *  (Double.pi/180))
     }
     
     private func config() {

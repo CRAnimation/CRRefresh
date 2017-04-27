@@ -35,6 +35,8 @@ open class CRRefreshAnimator: CRRefreshProtocol {
     
     open var execute: CGFloat = 60.0
     
+    open var endDelay: CGFloat = 0
+    
     public init() {
         view = UIView()
         insets = UIEdgeInsets.zero

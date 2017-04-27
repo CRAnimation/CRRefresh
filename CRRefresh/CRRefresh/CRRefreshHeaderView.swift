@@ -78,18 +78,29 @@ open class CRRefreshHeaderView: CRRefreshComponent {
         guard let scrollView = scrollView else { return }
         // 动画的时候先忽略监听
         ignoreObserver(true)
-        // 结束动画
-        animator.refreshEnd(view: self, finish: false)
-        // 调整scrollView的contentInset
-        UIView.animate(withDuration: CRRefreshComponent.animationDuration, animations: { 
-            scrollView.contentInset.top += self.insetTDelta
-        }) { (finished) in
-            DispatchQueue.main.async {
-                self.state = .idle
-                super.stop()
-                self.animator.refreshEnd(view: self, finish: true)
-                self.ignoreObserver(false)
+        animator.refreshWillEnd(view: self)
+        func beginStop() {
+            // 结束动画
+            animator.refreshEnd(view: self, finish: false)
+            // 调整scrollView的contentInset
+            UIView.animate(withDuration: CRRefreshComponent.animationDuration, animations: {
+                scrollView.contentInset.top += self.insetTDelta
+            }) { (finished) in
+                DispatchQueue.main.async {
+                    self.state = .idle
+                    super.stop()
+                    self.animator.refreshEnd(view: self, finish: true)
+                    self.ignoreObserver(false)
+                }
             }
+        }
+        if animator.endDelay > 0 {
+            let delay =  DispatchTimeInterval.milliseconds(Int(animator.endDelay * 1000))
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
+                beginStop()
+            })
+        }else {
+            beginStop()
         }
     }
 

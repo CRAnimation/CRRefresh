@@ -11,6 +11,11 @@
 		9702BC8B1E7A8F1800705296 /* NormalFooterAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9702BC871E7A8F1800705296 /* NormalFooterAnimator.swift */; };
 		9702BC8C1E7A8F1800705296 /* NormalHeader.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9702BC881E7A8F1800705296 /* NormalHeader.bundle */; };
 		9702BC8D1E7A8F1800705296 /* NormalHeaderAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9702BC891E7A8F1800705296 /* NormalHeaderAnimator.swift */; };
+		9717BBAA1EB1C01E00AD6864 /* FastCheckLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9717BBA91EB1C01E00AD6864 /* FastCheckLayer.swift */; };
+		974647E31E8A4F93003A3019 /* FastAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974647E01E8A4F93003A3019 /* FastAnimator.swift */; };
+		974647E41E8A4F93003A3019 /* FastArrowLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974647E11E8A4F93003A3019 /* FastArrowLayer.swift */; };
+		974647E51E8A4F93003A3019 /* FastCircleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974647E21E8A4F93003A3019 /* FastCircleLayer.swift */; };
+		974647E71E8A545B003A3019 /* FastLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974647E61E8A545B003A3019 /* FastLayer.swift */; };
 		9753C6691E76A12A00CCBBA0 /* SlackLoadingAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9753C65B1E76A12A00CCBBA0 /* SlackLoadingAnimator.swift */; };
 		9753C66A1E76A12A00CCBBA0 /* WCLLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9753C65C1E76A12A00CCBBA0 /* WCLLoadingView.swift */; };
 		9753C66B1E76A12A00CCBBA0 /* CRRefreshAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9753C65D1E76A12A00CCBBA0 /* CRRefreshAnimator.swift */; };
@@ -58,6 +63,11 @@
 		9702BC871E7A8F1800705296 /* NormalFooterAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalFooterAnimator.swift; sourceTree = "<group>"; };
 		9702BC881E7A8F1800705296 /* NormalHeader.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NormalHeader.bundle; sourceTree = "<group>"; };
 		9702BC891E7A8F1800705296 /* NormalHeaderAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalHeaderAnimator.swift; sourceTree = "<group>"; };
+		9717BBA91EB1C01E00AD6864 /* FastCheckLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastCheckLayer.swift; sourceTree = "<group>"; };
+		974647E01E8A4F93003A3019 /* FastAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastAnimator.swift; sourceTree = "<group>"; };
+		974647E11E8A4F93003A3019 /* FastArrowLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastArrowLayer.swift; sourceTree = "<group>"; };
+		974647E21E8A4F93003A3019 /* FastCircleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastCircleLayer.swift; sourceTree = "<group>"; };
+		974647E61E8A545B003A3019 /* FastLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastLayer.swift; sourceTree = "<group>"; };
 		9753C6461E76A0D200CCBBA0 /* CRRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CRRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9753C64A1E76A0D200CCBBA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9753C65B1E76A12A00CCBBA0 /* SlackLoadingAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlackLoadingAnimator.swift; sourceTree = "<group>"; };
@@ -108,6 +118,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		974647DF1E8A4F93003A3019 /* FastAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				974647E01E8A4F93003A3019 /* FastAnimator.swift */,
+				974647E61E8A545B003A3019 /* FastLayer.swift */,
+				974647E11E8A4F93003A3019 /* FastArrowLayer.swift */,
+				974647E21E8A4F93003A3019 /* FastCircleLayer.swift */,
+				9717BBA91EB1C01E00AD6864 /* FastCheckLayer.swift */,
+			);
+			path = FastAnimator;
+			sourceTree = "<group>";
+		};
 		9753C63C1E76A0D200CCBBA0 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +176,7 @@
 		9753C6521E76A12A00CCBBA0 /* Animators */ = {
 			isa = PBXGroup;
 			children = (
+				974647DF1E8A4F93003A3019 /* FastAnimator */,
 				9753C69E1E76B35600CCBBA0 /* RamotionAnimator */,
 				9753C6531E76A12A00CCBBA0 /* NormalAnimator */,
 				9753C65A1E76A12A00CCBBA0 /* SlackLoadingAnimator */,
@@ -338,19 +361,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				9753C66C1E76A12A00CCBBA0 /* CRRefreshBundle.swift in Sources */,
+				974647E51E8A4F93003A3019 /* FastCircleLayer.swift in Sources */,
 				9753C66B1E76A12A00CCBBA0 /* CRRefreshAnimator.swift in Sources */,
 				9702BC8D1E7A8F1800705296 /* NormalHeaderAnimator.swift in Sources */,
 				9753C6A01E76B36300CCBBA0 /* RamotionAnimator.swift in Sources */,
 				9753C6AC1E77C2E000CCBBA0 /* RamotionBallLayer.swift in Sources */,
 				9702BC8B1E7A8F1800705296 /* NormalFooterAnimator.swift in Sources */,
 				9753C6691E76A12A00CCBBA0 /* SlackLoadingAnimator.swift in Sources */,
+				974647E31E8A4F93003A3019 /* FastAnimator.swift in Sources */,
 				9753C66E1E76A12A00CCBBA0 /* CRRefreshExtension.swift in Sources */,
 				9753C66D1E76A12A00CCBBA0 /* CRRefreshComponent.swift in Sources */,
 				9753C6701E76A12A00CCBBA0 /* CRRefreshHeaderView.swift in Sources */,
+				974647E41E8A4F93003A3019 /* FastArrowLayer.swift in Sources */,
 				9753C66A1E76A12A00CCBBA0 /* WCLLoadingView.swift in Sources */,
 				9753C6A81E76F88A00CCBBA0 /* RamotionWaveLayer.swift in Sources */,
 				9753C66F1E76A12A00CCBBA0 /* CRRefreshFooterView.swift in Sources */,
+				9717BBAA1EB1C01E00AD6864 /* FastCheckLayer.swift in Sources */,
 				9753C6711E76A12A00CCBBA0 /* CRRefreshProtocol.swift in Sources */,
+				974647E71E8A545B003A3019 /* FastLayer.swift in Sources */,
 				9753C6AA1E77755600CCBBA0 /* RamotionBounceLayer.swift in Sources */,
 				9753C6721E76A12A00CCBBA0 /* UIColorExtension.swift in Sources */,
 			);

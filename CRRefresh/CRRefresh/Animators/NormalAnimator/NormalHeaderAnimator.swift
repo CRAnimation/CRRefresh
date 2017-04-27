@@ -43,6 +43,7 @@ open class NormalHeaderAnimator: UIView, CRRefreshProtocol {
     open var insets: UIEdgeInsets = .zero
     open var trigger: CGFloat = 60.0
     open var execute: CGFloat = 60.0
+    open var endDelay: CGFloat = 0
 
     fileprivate let imageView: UIImageView = {
         let imageView = UIImageView.init()
@@ -81,7 +82,7 @@ open class NormalHeaderAnimator: UIView, CRRefreshProtocol {
         indicatorView.isHidden = false
         imageView.isHidden     = true
         titleLabel.text        = loadingDescription
-        imageView.transform    = CGAffineTransform(rotationAngle: 0.000001 - CGFloat(M_PI))
+        imageView.transform    = CGAffineTransform(rotationAngle: 0.000001 - CGFloat(Double.pi))
     }
   
     open func refreshEnd(view: CRRefreshComponent, finish: Bool) {
@@ -94,6 +95,10 @@ open class NormalHeaderAnimator: UIView, CRRefreshProtocol {
             titleLabel.text = pullToRefreshDescription
             setNeedsLayout()
         }
+    }
+    
+    public func refreshWillEnd(view: CRRefreshComponent) {
+        
     }
     
     open func refresh(view: CRRefreshComponent, progressDidChange progress: CGFloat) {
@@ -111,7 +116,7 @@ open class NormalHeaderAnimator: UIView, CRRefreshProtocol {
             self.setNeedsLayout()
             UIView.animate(withDuration: 0.2, delay: 0.0, options: UIViewAnimationOptions(), animations: {
                 [weak self] in
-                self?.imageView.transform = CGAffineTransform(rotationAngle: 0.000001 - CGFloat(M_PI))
+                self?.imageView.transform = CGAffineTransform(rotationAngle: 0.000001 - CGFloat(Double.pi))
             }) { (animated) in }
             break
         case .idle:

@@ -38,8 +38,14 @@ public protocol CRRefreshProtocol {
     /// 动画执行时的高度
     var execute: CGFloat {set get}
     
+    /// 动画结束时延迟的时间，单位秒
+    var endDelay: CGFloat {set get}
+    
     /// 开始刷新
     mutating func refreshBegin(view: CRRefreshComponent)
+    
+    /// 将要开始刷新
+    mutating func refreshWillEnd(view: CRRefreshComponent)
     
     /// 结束刷新
     mutating func refreshEnd(view: CRRefreshComponent, finish: Bool)
