@@ -39,7 +39,7 @@ class FastCheckLayer: CALayer {
         start.values = [0, 0.4, 0.3]
         start.isRemovedOnCompletion = false
         start.fillMode = kCAFillModeForwards
-        start.duration = 0.2
+        start.duration = 0.5
         start.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         
         let end = CAKeyframeAnimation(keyPath: "strokeEnd")
@@ -47,7 +47,7 @@ class FastCheckLayer: CALayer {
 
         end.isRemovedOnCompletion = false
         end.fillMode = kCAFillModeForwards
-        end.duration = 0.3
+        end.duration = 0.8
         end.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         
         check?.add(start, forKey: "start")

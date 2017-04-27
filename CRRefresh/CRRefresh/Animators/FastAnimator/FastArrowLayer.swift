@@ -121,7 +121,7 @@ class FastArrowLayer: CALayer,
         arrowLayer?.removeAllAnimations()
         lineLayer?.removeAllAnimations()
     }
-    
+
     private func addLineAnimation() {
         let start = CABasicAnimation(keyPath: "strokeStart")
         start.fromValue = 0.5
