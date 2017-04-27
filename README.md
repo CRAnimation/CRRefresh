@@ -15,6 +15,8 @@
 | ![](CRRefresh1.gif) |  ![](CRRefresh2.gif)   | ![](CRRefresh3.gif) |
 | :-----------------: | :--------------------: | :-----------------: |
 |  `NormalAnimator`   | `SlackLoadingAnimator` | `RamotionAnimator`  |
+| ![](CRRefresh4.gif) |                        |                     |
+|   `FastAnimator`    |                        |                     |
 
 ## Requirements
 
@@ -76,7 +78,7 @@ import CRRefresh
 
 ```swift
 /// animator: your customize animator, default is NormalHeaderAnimator
-tableView.cr.addHeadRefresh(animator: RamotionAnimator()) { [weak self] in
+tableView.cr.addHeadRefresh(animator: NormalHeaderAnimator()) { [weak self] in
     /// start refresh
     /// Do anything you want...
     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -92,7 +94,7 @@ tableView.cr.beginHeaderRefresh()
 
 ```swift
 /// animator: your customize animator, default is NormalFootAnimator
-tableView.cr.addFootRefresh(animator: refresh.footer.commont()) { [weak self] in
+tableView.cr.addFootRefresh(animator: NormalFootAnimator()) { [weak self] in
     /// start refresh
     /// Do anything you want...
     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {

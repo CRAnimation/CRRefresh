@@ -15,6 +15,8 @@
 | ![](CRRefresh1.gif) |  ![](CRRefresh2.gif)   | ![](CRRefresh3.gif) |
 | :-----------------: | :--------------------: | :-----------------: |
 |  `NormalAnimator`   | `SlackLoadingAnimator` | `RamotionAnimator`  |
+| ![](CRRefresh4.gif) |                        |                     |
+|   `FastAnimator`    |                        |                     |
 
 ## 支持环境
 
@@ -65,7 +67,7 @@ import CRRefresh
 
 ```swift
 /// animator: 你的上拉刷新的Animator, 默认是 NormalHeaderAnimator
-tableView.cr.addHeadRefresh(animator: RamotionAnimator()) { [weak self] in
+tableView.cr.addHeadRefresh(animator: NormalHeaderAnimator()) { [weak self] in
     /// 开始刷新了
     /// 开始刷新的回调
     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -81,7 +83,7 @@ tableView.cr.beginHeaderRefresh()
 
 ```swift
 /// animator: 你的下拉加载的Animator, 默认是NormalFootAnimator
-tableView.cr.addFootRefresh(animator: refresh.footer.commont()) { [weak self] in
+tableView.cr.addFootRefresh(animator: NormalFootAnimator()) { [weak self] in
     /// 开始下拉加载
     /// 回调
     DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {

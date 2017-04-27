@@ -64,7 +64,7 @@ class RefreshController: BaseViewController {
         
         tableView.cr.addHeadRefresh(animator: refresh.header.commont()) { [weak self] in
             print("开始刷新")
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
                 self?.count = 10
                 self?.tableView.reloadData()
                 self?.tableView.cr.endHeaderRefresh()
