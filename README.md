@@ -156,7 +156,7 @@ You are welcome to contribute to the project by forking the repo, modifying the 
 If you wish to contact me
 
 - Email: wangchonglei93@icloud.com
-- Github: https://github.com/631106979
+- Github: https://github.com/imwcl
 - QQ: 631106979
 - Dynamic effect study group: 547897182
 

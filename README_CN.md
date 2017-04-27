@@ -145,7 +145,7 @@ tableView.cr.removeHeader()
 如果你想联系我：
 
 - Email: wangchonglei93@icloud.com
-- Github: https://github.com/631106979
+- Github: https://github.com/imwcl
 - QQ： 631106979
 - 动效学习群：547897182
 
