@@ -106,7 +106,7 @@ class FastCircleLayer: CALayer {
             var transform = CGAffineTransform.identity
             transform = transform.rotated(by: self!.rotated)
             DispatchQueue.main.async {
-                self!.pointBack.setAffineTransform(transform)
+                self?.pointBack.setAffineTransform(transform)
             }
         })
         codeTimer?.resume()
