@@ -91,7 +91,7 @@ class FastArrowLayer: CALayer,
     
     //MARK: public Methods
     @discardableResult
-    public func startAnimation() -> Self {
+    func startAnimation() -> Self {
         let start = CABasicAnimation(keyPath: "strokeStart")
         start.duration  = animationDuration
         start.fromValue = 0
@@ -115,7 +115,7 @@ class FastArrowLayer: CALayer,
         return self
     }
 
-    public func endAnimation() {
+    func endAnimation() {
         arrowLayer?.isHidden = false
         lineLayer?.isHidden  = false
         arrowLayer?.removeAllAnimations()

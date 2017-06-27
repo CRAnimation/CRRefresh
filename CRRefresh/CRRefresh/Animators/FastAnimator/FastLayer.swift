@@ -44,7 +44,7 @@ class FastLayer: CALayer {
     
     
     //MARK: Initial Methods
-    public init(frame: CGRect, color: UIColor = .init(rgba: "#D6D6D6"), arrowColor: UIColor = .init(rgba: "#A5A5A5"), lineWidth: CGFloat = 1) {
+    init(frame: CGRect, color: UIColor = .init(rgba: "#D6D6D6"), arrowColor: UIColor = .init(rgba: "#A5A5A5"), lineWidth: CGFloat = 1) {
         self.color      = color
         self.arrowColor = arrowColor
         self.lineWidth  = lineWidth

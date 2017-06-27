@@ -25,16 +25,16 @@
 
 import UIKit
 
-public class CRRefreshBundle {
+class CRRefreshBundle {
     
-    public var crBundle: Bundle
+    var crBundle: Bundle
     
     init(bundle: Bundle) {
         crBundle = bundle
     }
     
     @discardableResult
-    public static func bundle(name: String, for aClass: Swift.AnyClass) -> CRRefreshBundle? {
+    static func bundle(name: String, for aClass: Swift.AnyClass) -> CRRefreshBundle? {
         let bundle = Bundle(for: aClass)
         if let path = bundle.path(forResource: name, ofType: "bundle") {
             if let bundle = Bundle(path: path) {
@@ -44,7 +44,7 @@ public class CRRefreshBundle {
         return nil
     }
     
-    public func imageFromBundle(_ imageName: String) -> UIImage? {
+    func imageFromBundle(_ imageName: String) -> UIImage? {
         var imageName = imageName
         if UIScreen.main.scale == 2 {
             imageName = imageName + "@2x"
@@ -59,7 +59,7 @@ public class CRRefreshBundle {
         return nil
     }
     
-    public func localizedString(key: String) -> String {
+    func localizedString(key: String) -> String {
         if let current = Locale.current.languageCode {
             var language = ""
             switch current {
