@@ -77,7 +77,7 @@ class FastCircleLayer: CALayer {
         point.isHidden  = false
         
         codeTimer = DispatchSource.makeTimerSource(queue: DispatchQueue.global())
-        codeTimer?.scheduleRepeating(deadline: .now(), interval: .milliseconds(42))
+        codeTimer?.schedule(deadline: .now(), repeating: .milliseconds(42))
         codeTimer?.setEventHandler(handler: { [weak self] in
             guard self != nil else {
                 return

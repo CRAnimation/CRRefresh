@@ -148,17 +148,17 @@ extension CRRefreshComponent {
         isIgnoreObserving = ignore
     }
     
-    public func start() {
+    @objc public func start() {
         isRefreshing = true
     }
     
-    public func stop() {
+    @objc public func stop() {
         isRefreshing = false
     }
     
-    public func sizeChange(change: [NSKeyValueChangeKey : Any]?) {}
+    @objc public func sizeChange(change: [NSKeyValueChangeKey : Any]?) {}
     
-    public func offsetChange(change: [NSKeyValueChangeKey : Any]?) {}
+    @objc public func offsetChange(change: [NSKeyValueChangeKey : Any]?) {}
 }
 
 //MARK: Observer Methods 

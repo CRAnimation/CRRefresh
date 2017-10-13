@@ -66,7 +66,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     //左边nav的点击事件
-    func leftButtonAction(_ button: UIButton) {
+    @objc func leftButtonAction(_ button: UIButton) {
         _ = navigationController?.popViewController(animated: true)
     }
     /**
