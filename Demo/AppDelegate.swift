@@ -21,6 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let VC = ViewController()
         let NAV = NavigationViewController(rootViewController: VC)
         window?.rootViewController = NAV
+        
+        UITableView.appearance().estimatedSectionHeaderHeight = 0
+        UITableView.appearance().estimatedSectionFooterHeight = 0
+
         return true
     }
 

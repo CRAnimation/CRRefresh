@@ -39,7 +39,7 @@ class WCLLoadingView: UIView, CAAnimationDelegate {
     //动画的间隔时间
     var interval:Double = 1
     //四条线的颜色
-    var colors:[UIColor] = [UIColor(rgba: "#9DD4E9") , UIColor(rgba: "#F5BD58"),  UIColor(rgba: "#FF317E") , UIColor(rgba: "#6FC9B5")]
+    var colors:[UIColor] = [UIColor(rgb: (157, 212, 233)) , UIColor(rgb: (245, 189, 88)),  UIColor(rgb: (255, 49, 126)) , UIColor(rgb: (111, 201, 181))]
     //动画的状态
     private(set) var status:AnimationStatus = .normal
     //四条线

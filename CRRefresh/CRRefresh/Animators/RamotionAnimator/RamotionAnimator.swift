@@ -48,7 +48,7 @@ public class RamotionAnimator: UIView, CRRefreshProtocol {
     /// - Parameters:
     ///   - ballColor: 小球的颜色
     ///   - waveColor: 上方wave的颜色
-    public init(ballColor: UIColor = .white, waveColor: UIColor = .init(rgba: "#8C8DB2")) {
+    public init(ballColor: UIColor = .white, waveColor: UIColor = .init(rgb: (140, 141, 178))) {
         self.ballColor = ballColor
         self.waveColor = waveColor
         super.init(frame: .zero)
@@ -96,7 +96,7 @@ public class RamotionAnimator: UIView, CRRefreshProtocol {
     
     override init(frame: CGRect) {
         self.ballColor = .white
-        self.waveColor = .init(rgba: "#8C8DB2")
+        self.waveColor = .init(rgb: (140, 141, 178))
         super.init(frame: frame)
     }
     

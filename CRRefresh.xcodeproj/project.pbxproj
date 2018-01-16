@@ -25,7 +25,6 @@
 		9753C66F1E76A12A00CCBBA0 /* CRRefreshFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9753C6611E76A12A00CCBBA0 /* CRRefreshFooterView.swift */; };
 		9753C6701E76A12A00CCBBA0 /* CRRefreshHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9753C6621E76A12A00CCBBA0 /* CRRefreshHeaderView.swift */; };
 		9753C6711E76A12A00CCBBA0 /* CRRefreshProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9753C6631E76A12A00CCBBA0 /* CRRefreshProtocol.swift */; };
-		9753C6721E76A12A00CCBBA0 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9753C6641E76A12A00CCBBA0 /* UIColorExtension.swift */; };
 		9753C67A1E76A13C00CCBBA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9753C6791E76A13C00CCBBA0 /* AppDelegate.swift */; };
 		9753C67C1E76A13C00CCBBA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9753C67B1E76A13C00CCBBA0 /* ViewController.swift */; };
 		9753C6811E76A13C00CCBBA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9753C6801E76A13C00CCBBA0 /* Assets.xcassets */; };
@@ -43,6 +42,7 @@
 		9753C6A81E76F88A00CCBBA0 /* RamotionWaveLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9753C6A71E76F88A00CCBBA0 /* RamotionWaveLayer.swift */; };
 		9753C6AA1E77755600CCBBA0 /* RamotionBounceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9753C6A91E77755600CCBBA0 /* RamotionBounceLayer.swift */; };
 		9753C6AC1E77C2E000CCBBA0 /* RamotionBallLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9753C6AB1E77C2E000CCBBA0 /* RamotionBallLayer.swift */; };
+		97884D03200DD20A0017692A /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97884D02200DD20A0017692A /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,7 +79,6 @@
 		9753C6611E76A12A00CCBBA0 /* CRRefreshFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRRefreshFooterView.swift; sourceTree = "<group>"; };
 		9753C6621E76A12A00CCBBA0 /* CRRefreshHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRRefreshHeaderView.swift; sourceTree = "<group>"; };
 		9753C6631E76A12A00CCBBA0 /* CRRefreshProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRRefreshProtocol.swift; sourceTree = "<group>"; };
-		9753C6641E76A12A00CCBBA0 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		9753C6771E76A13C00CCBBA0 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9753C6791E76A13C00CCBBA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9753C67B1E76A13C00CCBBA0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +96,7 @@
 		9753C6A71E76F88A00CCBBA0 /* RamotionWaveLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RamotionWaveLayer.swift; sourceTree = "<group>"; };
 		9753C6A91E77755600CCBBA0 /* RamotionBounceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RamotionBounceLayer.swift; sourceTree = "<group>"; };
 		9753C6AB1E77C2E000CCBBA0 /* RamotionBallLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RamotionBallLayer.swift; sourceTree = "<group>"; };
+		97884D02200DD20A0017692A /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +168,7 @@
 				9753C6611E76A12A00CCBBA0 /* CRRefreshFooterView.swift */,
 				9753C6621E76A12A00CCBBA0 /* CRRefreshHeaderView.swift */,
 				9753C6631E76A12A00CCBBA0 /* CRRefreshProtocol.swift */,
-				9753C6641E76A12A00CCBBA0 /* UIColorExtension.swift */,
+				97884D02200DD20A0017692A /* UIColorExtension.swift */,
 			);
 			path = CRRefresh;
 			sourceTree = "<group>";
@@ -368,6 +368,7 @@
 				9753C6AC1E77C2E000CCBBA0 /* RamotionBallLayer.swift in Sources */,
 				9702BC8B1E7A8F1800705296 /* NormalFooterAnimator.swift in Sources */,
 				9753C6691E76A12A00CCBBA0 /* SlackLoadingAnimator.swift in Sources */,
+				97884D03200DD20A0017692A /* UIColorExtension.swift in Sources */,
 				974647E31E8A4F93003A3019 /* FastAnimator.swift in Sources */,
 				9753C66E1E76A12A00CCBBA0 /* CRRefreshExtension.swift in Sources */,
 				9753C66D1E76A12A00CCBBA0 /* CRRefreshComponent.swift in Sources */,
@@ -380,7 +381,6 @@
 				9753C6711E76A12A00CCBBA0 /* CRRefreshProtocol.swift in Sources */,
 				974647E71E8A545B003A3019 /* FastLayer.swift in Sources */,
 				9753C6AA1E77755600CCBBA0 /* RamotionBounceLayer.swift in Sources */,
-				9753C6721E76A12A00CCBBA0 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,7 +527,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = WCL.CRRefresh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -547,7 +547,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = WCL.CRRefresh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

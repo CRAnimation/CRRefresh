@@ -41,7 +41,7 @@ class FastArrowLayer: CALayer,
     var animationEnd: (()->Void)?
     
     //MARK: Initial Methods
-    init(frame: CGRect, color: UIColor = .init(rgba: "#A5A5A5"), lineWidth: CGFloat = 1) {
+    init(frame: CGRect, color: UIColor = .init(rgb: (165, 165, 165)), lineWidth: CGFloat = 1) {
         self.color      = color
         self.lineWidth  = lineWidth
         super.init()

@@ -112,10 +112,8 @@ open class CRRefreshComponent: UIView {
             ]
         }
     }
-}
-
-//MARK: Public Methods
-extension CRRefreshComponent {
+    
+    //MARK: Public Methods
     public final func beginRefreshing() -> Void {
         guard isRefreshing == false else { return }
         if self.window != nil {
@@ -160,6 +158,8 @@ extension CRRefreshComponent {
     
     public func offsetChange(change: [NSKeyValueChangeKey : Any]?) {}
 }
+
+
 
 //MARK: Observer Methods 
 extension CRRefreshComponent {

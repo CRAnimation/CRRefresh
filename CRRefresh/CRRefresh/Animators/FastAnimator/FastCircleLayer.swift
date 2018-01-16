@@ -52,7 +52,7 @@ class FastCircleLayer: CALayer {
     var codeTimer: DispatchSourceTimer?
     
     //MARK: Initial Methods
-    init(frame: CGRect, color: UIColor = .init(rgba: "#D6D6D6"), pointColor: UIColor = .init(rgba: "#A5A5A5"), lineWidth: CGFloat = 1) {
+    init(frame: CGRect, color: UIColor = .init(rgb: (214, 214, 214)), pointColor: UIColor = .init(rgb: (165, 165, 165)), lineWidth: CGFloat = 1) {
         self.color      = color
         self.lineWidth  = lineWidth
         self.pointColor = pointColor
@@ -77,7 +77,7 @@ class FastCircleLayer: CALayer {
         point.isHidden  = false
         
         codeTimer = DispatchSource.makeTimerSource(queue: DispatchQueue.global())
-        codeTimer?.scheduleRepeating(deadline: .now(), interval: .milliseconds(42))
+        codeTimer?.schedule(deadline: .now(), repeating: .milliseconds(42))
         codeTimer?.setEventHandler(handler: { [weak self] in
             guard self != nil else {
                 return
