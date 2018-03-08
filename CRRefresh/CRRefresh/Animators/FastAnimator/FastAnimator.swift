@@ -37,6 +37,8 @@ public class FastAnimator: UIView, CRRefreshProtocol {
     
     public var endDelay: CGFloat = 1
     
+    public var hold: CGFloat = 55.0
+    
     private(set) var color: UIColor = .init(rgb: (214, 214, 214))
     
     private(set) var arrowColor: UIColor = .init(rgb: (165, 165, 165))

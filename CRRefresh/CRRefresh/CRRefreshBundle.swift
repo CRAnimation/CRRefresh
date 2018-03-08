@@ -51,8 +51,8 @@ class CRRefreshBundle {
         }else if UIScreen.main.scale == 3 {
             imageName = imageName + "@3x"
         }
-        let bundle = Bundle(path: crBundle.bundlePath + "/Images")
-        if let path = bundle?.path(forResource: imageName, ofType: "png") {
+        let bundle = Bundle(path: crBundle.bundlePath + "/images")
+         if let path = bundle?.path(forResource: imageName, ofType: "png") {
             let image = UIImage(contentsOfFile: path)
             return image
         }

@@ -28,7 +28,7 @@ import UIKit
 private var kCRRefreshHeaderKey = "kCRRefreshHeaderKey"
 private var kCRRefreshFooterKey = "kCRRefreshFooterKey"
 
-typealias CRRefreshView = UIScrollView
+public typealias CRRefreshView = UIScrollView
 
 extension CRRefreshView {
     public var cr: CRRefreshDSL {
@@ -38,7 +38,7 @@ extension CRRefreshView {
 
 public struct CRRefreshDSL: CRRefreshViewProtocol {
     
-    internal var scroll: CRRefreshView
+    public var scroll: CRRefreshView
     
     internal init(scroll: CRRefreshView) {
         self.scroll = scroll
@@ -90,7 +90,7 @@ public struct CRRefreshDSL: CRRefreshViewProtocol {
 
 public struct CRRefreshMake: CRRefreshViewProtocol {
     
-    internal var scroll: CRRefreshView
+    public var scroll: CRRefreshView
     
     internal init(scroll: CRRefreshView) {
         self.scroll = scroll
@@ -135,7 +135,7 @@ public struct CRRefreshMake: CRRefreshViewProtocol {
     }
 }
 
-protocol CRRefreshViewProtocol {
+public protocol CRRefreshViewProtocol {
     var scroll: CRRefreshView {set get}
     /// 头部控件
     var header: CRRefreshHeaderView? {set get}

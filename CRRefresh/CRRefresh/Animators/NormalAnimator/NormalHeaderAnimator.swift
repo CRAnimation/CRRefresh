@@ -41,9 +41,10 @@ open class NormalHeaderAnimator: UIView, CRRefreshProtocol {
 
     open var view: UIView { return self }
     open var insets: UIEdgeInsets = .zero
-    open var trigger: CGFloat = 60.0
-    open var execute: CGFloat = 60.0
+    open var trigger: CGFloat  = 60.0
+    open var execute: CGFloat  = 60.0
     open var endDelay: CGFloat = 0
+    public var hold: CGFloat   = 60
 
     fileprivate let imageView: UIImageView = {
         let imageView = UIImageView.init()

@@ -38,9 +38,10 @@ open class NormalFooterAnimator: UIView, CRRefreshProtocol {
     open var insets: UIEdgeInsets   = .zero
     open var trigger: CGFloat       = 50.0
     open var execute: CGFloat       = 50.0
-    open var endDelay: CGFloat = 0
+    open var endDelay: CGFloat      = 0
+    open var hold: CGFloat          = 50
     
-    fileprivate let titleLabel: UILabel = {
+    fileprivate lazy var titleLabel: UILabel = {
         let label = UILabel.init(frame: CGRect.zero)
         label.font = UIFont.systemFont(ofSize: 14.0)
         label.textColor = UIColor.init(white: 160.0 / 255.0, alpha: 1.0)
@@ -48,7 +49,7 @@ open class NormalFooterAnimator: UIView, CRRefreshProtocol {
         return label
     }()
     
-    fileprivate let indicatorView: UIActivityIndicatorView = {
+    fileprivate lazy var indicatorView: UIActivityIndicatorView = {
         let indicatorView = UIActivityIndicatorView.init(activityIndicatorStyle: .gray)
         indicatorView.isHidden = true
         return indicatorView
@@ -108,7 +109,7 @@ open class NormalFooterAnimator: UIView, CRRefreshProtocol {
         let w = s.width
         let h = s.height
         titleLabel.sizeToFit()
-        titleLabel.center = CGPoint.init(x: w / 2.0, y: h / 2.0 - 5.0)
+        titleLabel.center = CGPoint.init(x: w / 2.0, y: h / 2.0 - 5.0 + insets.top)
         indicatorView.center = CGPoint.init(x: titleLabel.frame.origin.x - 18.0, y: titleLabel.center.y)
     }
 }

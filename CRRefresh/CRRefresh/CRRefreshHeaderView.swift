@@ -30,7 +30,10 @@ open class CRRefreshHeaderView: CRRefreshComponent {
     /// 记录之前的offsetY
     fileprivate var previousOffsetY: CGFloat = 0.0
     fileprivate var scrollViewBounces: Bool  = true
+    /// 记录结束刷新时需要调整的contentInsetY
     fileprivate var insetTDelta: CGFloat     = 0.0
+    /// 记录悬停时需要调整的contentInsetY
+    fileprivate var holdInsetTDelta: CGFloat = 0.0
     
     public convenience init(animator: CRRefreshProtocol = NormalHeaderAnimator(), handler: @escaping CRRefreshHandler) {
         self.init(frame: .zero)
@@ -61,6 +64,7 @@ open class CRRefreshHeaderView: CRRefreshComponent {
         scrollViewInsets.top = insets.top
         insets.top          += animator.execute
         insetTDelta          = -animator.execute
+        holdInsetTDelta      = -(animator.execute - animator.hold)
         UIView.animate(withDuration: CRRefreshComponent.animationDuration, animations: { 
             scrollView.contentOffset.y = self.previousOffsetY
             scrollView.contentInset    = insets
@@ -79,12 +83,17 @@ open class CRRefreshHeaderView: CRRefreshComponent {
         // 动画的时候先忽略监听
         ignoreObserver(true)
         animator.refreshWillEnd(view: self)
+        if self.animator.hold != 0 {
+            UIView.animate(withDuration: CRRefreshComponent.animationDuration) {
+                scrollView.contentInset.top += self.holdInsetTDelta
+            }
+        }
         func beginStop() {
             // 结束动画
             animator.refreshEnd(view: self, finish: false)
             // 调整scrollView的contentInset
             UIView.animate(withDuration: CRRefreshComponent.animationDuration, animations: {
-                scrollView.contentInset.top += self.insetTDelta
+                scrollView.contentInset.top += self.insetTDelta - self.holdInsetTDelta
             }) { (finished) in
                 DispatchQueue.main.async {
                     self.state = .idle

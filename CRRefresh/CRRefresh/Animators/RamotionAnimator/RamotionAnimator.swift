@@ -31,11 +31,14 @@ public class RamotionAnimator: UIView, CRRefreshProtocol {
     
     public var insets: UIEdgeInsets = .zero
     
-    public var trigger: CGFloat = 140
+    public var trigger: CGFloat  = 140
     
-    public var execute: CGFloat = 90
+    public var execute: CGFloat  = 90
     
     public var endDelay: CGFloat = 0
+    
+    public var hold: CGFloat     = 90
+
     
     var bounceLayer: RamotionBounceLayer?
     /// 上方wave的颜色

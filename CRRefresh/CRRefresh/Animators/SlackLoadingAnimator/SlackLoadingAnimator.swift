@@ -37,6 +37,8 @@ public class SlackLoadingAnimator: UIView, CRRefreshProtocol {
     
     public var endDelay: CGFloat = 0
     
+    public var hold: CGFloat     = 60
+    
     var loadingView: WCLLoadingView = {
         let loadView = WCLLoadingView(frame: .init(x: 0, y: 0, width: 40, height: 40))
         loadView.isUserInteractionEnabled = false
