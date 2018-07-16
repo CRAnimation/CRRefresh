@@ -24,6 +24,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 public class FastAnimator: UIView, CRRefreshProtocol {
     
@@ -35,7 +36,7 @@ public class FastAnimator: UIView, CRRefreshProtocol {
     
     public var execute: CGFloat = 55.0
     
-    public var endDelay: CGFloat = 1
+    public var endDelay: CGFloat = 1.5
     
     public var hold: CGFloat = 55.0
     
@@ -61,6 +62,7 @@ public class FastAnimator: UIView, CRRefreshProtocol {
         if finish {
             fastLayer?.arrow?.endAnimation()
             fastLayer?.circle?.endAnimation(finish: finish)
+            fastLayer?.arrow?.setAffineTransform(CGAffineTransform.identity)
         }
     }
     
@@ -70,12 +72,20 @@ public class FastAnimator: UIView, CRRefreshProtocol {
     
     /// 刷新进度的变化
     public func refresh(view: CRRefreshComponent, progressDidChange progress: CGFloat) {
-        
+        if progress >= 1 {
+            let transform = CGAffineTransform.identity.rotated(by: CGFloat(Double.pi))
+            fastLayer?.arrow?.setAffineTransform(transform)
+        } else {
+            let transform = CGAffineTransform.identity.rotated(by: CGFloat(2 * Double.pi))
+            fastLayer?.arrow?.setAffineTransform(transform)
+        }
     }
     
     /// 刷新状态的变化
     public func refresh(view: CRRefreshComponent, stateDidChange state: CRRefreshState) {
-        
+        if state == .pulling {
+            AudioServicesPlaySystemSound(1519)
+        }
     }
     
     //MARK: Override
@@ -89,13 +99,21 @@ public class FastAnimator: UIView, CRRefreshProtocol {
         if fastLayer == nil {
             let width  = frame.width
             let height = frame.height
-            fastLayer = FastLayer(frame: .init(x: width/2 - 14, y: height/2 - 14, width: 28, height: 28), color: color, arrowColor: arrowColor, lineWidth: lineWidth)
+            fastLayer = FastLayer(frame: .init(x: width/2 - 14,
+                                               y: height/2 - 14,
+                                               width: 28, height: 28),
+                                  color: color,
+                                  arrowColor: arrowColor,
+                                  lineWidth: lineWidth)
             layer.addSublayer(fastLayer!)
         }
     }
     
     //MARK: Initial Methods
-   public init(frame: CGRect, color: UIColor = .init(rgb: (214, 214, 214)), arrowColor: UIColor = .init(rgb: (165, 165, 165)), lineWidth: CGFloat = 1) {
+   public init(frame: CGRect,
+               color: UIColor = .init(rgb: (214, 214, 214)),
+               arrowColor: UIColor = .init(rgb: (165, 165, 165)),
+               lineWidth: CGFloat = 1) {
         self.color      = color
         self.arrowColor = arrowColor
         self.lineWidth  = lineWidth

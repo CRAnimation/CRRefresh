@@ -52,7 +52,10 @@ class FastCircleLayer: CALayer {
     var codeTimer: DispatchSourceTimer?
     
     //MARK: Initial Methods
-    init(frame: CGRect, color: UIColor = .init(rgb: (214, 214, 214)), pointColor: UIColor = .init(rgb: (165, 165, 165)), lineWidth: CGFloat = 1) {
+    init(frame: CGRect,
+         color: UIColor = .init(rgb: (214, 214, 214)),
+         pointColor: UIColor = .init(rgb: (165, 165, 165)),
+         lineWidth: CGFloat = 1) {
         self.color      = color
         self.lineWidth  = lineWidth
         self.pointColor = pointColor
@@ -79,34 +82,34 @@ class FastCircleLayer: CALayer {
         codeTimer = DispatchSource.makeTimerSource(queue: DispatchQueue.global())
         codeTimer?.schedule(deadline: .now(), repeating: .milliseconds(42))
         codeTimer?.setEventHandler(handler: { [weak self] in
-            guard self != nil else {
+            guard let `self` = self else {
                 return
             }
-            self!.rotated = self!.rotated - self!.rotatedSpeed
-            if self!.stop {
-                let count = Int(self!.rotated / CGFloat(Double.pi * 2))
-                if (CGFloat(Double.pi * 2 * Double(count)) - self!.rotated) >= 1.1 {
+            self.rotated = self.rotated - self.rotatedSpeed
+            if self.stop {
+                let count = Int(self.rotated / CGFloat(Double.pi * 2))
+                if (CGFloat(Double.pi * 2 * Double(count)) - self.rotated) >= 1.1 {
                     var transform = CGAffineTransform.identity
                     transform = transform.rotated(by: -1.1)
                     DispatchQueue.main.async {
-                        self!.pointBack.setAffineTransform(transform)
-                        self!.point.isHidden  = true
-                        self!.check?.startAnimation()
+                        self.pointBack.setAffineTransform(transform)
+                        self.point.isHidden  = true
+                        self.check?.startAnimation()
                     }
-                    self!.codeTimer?.cancel()
+                    self.codeTimer?.cancel()
                     return
                 }
             }
-            if self!.rotatedSpeed < 0.65 {
-                if self!.speedInterval < 0.02 {
-                    self!.speedInterval = self!.speedInterval + 0.001
+            if self.rotatedSpeed < 0.65 {
+                if self.speedInterval < 0.02 {
+                    self.speedInterval = self.speedInterval + 0.001
                 }
-                self!.rotatedSpeed = self!.rotatedSpeed + self!.speedInterval
+                self.rotatedSpeed = self.rotatedSpeed + self.speedInterval
             }
             var transform = CGAffineTransform.identity
-            transform = transform.rotated(by: self!.rotated)
+            transform = transform.rotated(by: self.rotated)
             DispatchQueue.main.async {
-                self?.pointBack.setAffineTransform(transform)
+                self.pointBack.setAffineTransform(transform)
             }
         })
         codeTimer?.resume()
@@ -137,7 +140,12 @@ class FastCircleLayer: CALayer {
         let width  = frame.size.width
         let height = frame.size.height
         let path = UIBezierPath()
-        path.addArc(withCenter: .init(x: width/2, y: height/2), radius: height/2, startAngle: 0, endAngle: CGFloat(Double.pi * 2.0), clockwise: false)
+        path.addArc(withCenter: .init(x: width/2,
+                                      y: height/2),
+                    radius: height/2,
+                    startAngle: 0,
+                    endAngle: CGFloat(Double.pi * 2.0),
+                    clockwise: false)
         circle.lineWidth   = lineWidth
         circle.strokeColor = color.cgColor
         circle.fillColor   = UIColor.clear.cgColor
@@ -149,7 +157,11 @@ class FastCircleLayer: CALayer {
     private func drawPoint() {
         let width  = frame.size.width
         let path = UIBezierPath()
-        path.addArc(withCenter: .init(x: width/2, y: width/2), radius: width/2, startAngle: CGFloat(Double.pi * 1.5), endAngle: CGFloat((Double.pi * 1.5) - 0.1), clockwise: false)
+        path.addArc(withCenter: .init(x: width/2, y: width/2),
+                    radius: width/2,
+                    startAngle: CGFloat(Double.pi * 0.5),
+                    endAngle: CGFloat((Double.pi * 0.5) - 0.1),
+                    clockwise: false)
         point.lineCap     = kCALineCapRound
         point.lineWidth   = lineWidth*2
         point.fillColor   = UIColor.clear.cgColor
@@ -165,7 +177,11 @@ class FastCircleLayer: CALayer {
         path.beginTime = CACurrentMediaTime() + 1
         path.fromValue = point.path
         let toPath = UIBezierPath()
-        toPath.addArc(withCenter: .init(x: width/2, y: width/2), radius: width/2, startAngle: CGFloat(Double.pi * 1.5), endAngle: CGFloat((Double.pi * 1.5) - 0.3), clockwise: false)
+        toPath.addArc(withCenter: .init(x: width/2, y: width/2),
+                      radius: width/2,
+                      startAngle: CGFloat(Double.pi * 0.5),
+                      endAngle: CGFloat((Double.pi * 0.5) - 0.3),
+                      clockwise: false)
         path.toValue = toPath.cgPath
         path.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         path.duration = 2
@@ -175,7 +191,12 @@ class FastCircleLayer: CALayer {
     }
     
     private func addCheckLayer() {
-        check = FastCheckLayer(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height), color: pointColor, lineWidth: lineWidth)
+        check = FastCheckLayer(frame: CGRect(x: 0,
+                                             y: 0,
+                                             width: frame.size.width,
+                                             height: frame.size.height),
+                               color: pointColor,
+                               lineWidth: lineWidth)
         addSublayer(check!)
     }
 }

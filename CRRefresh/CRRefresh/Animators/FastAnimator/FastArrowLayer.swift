@@ -28,9 +28,9 @@ import UIKit
 class FastArrowLayer: CALayer,
                       CAAnimationDelegate {
     
-    let color: UIColor
+    var color: UIColor = UIColor.init(rgb: (165, 165, 165))
     
-    let lineWidth: CGFloat
+    var lineWidth: CGFloat = 1
     
     private var lineLayer: CAShapeLayer?
     
@@ -41,7 +41,9 @@ class FastArrowLayer: CALayer,
     var animationEnd: (()->Void)?
     
     //MARK: Initial Methods
-    init(frame: CGRect, color: UIColor = .init(rgb: (165, 165, 165)), lineWidth: CGFloat = 1) {
+    init(frame: CGRect,
+         color: UIColor = .init(rgb: (165, 165, 165)),
+         lineWidth: CGFloat = 1) {
         self.color      = color
         self.lineWidth  = lineWidth
         super.init()
@@ -156,5 +158,9 @@ class FastArrowLayer: CALayer,
                 }
             }
         }
+    }
+    
+    override init(layer: Any) {
+        super.init(layer: layer)
     }
 }
