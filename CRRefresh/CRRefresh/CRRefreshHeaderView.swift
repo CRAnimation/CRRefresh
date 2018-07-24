@@ -34,13 +34,14 @@ open class CRRefreshHeaderView: CRRefreshComponent {
     fileprivate var insetTDelta: CGFloat     = 0.0
     /// 记录悬停时需要调整的contentInsetY
     fileprivate var holdInsetTDelta: CGFloat = 0.0
+    /// 是否还在结束中
+    private var isEnding: Bool = false
     
     public convenience init(animator: CRRefreshProtocol = NormalHeaderAnimator(), handler: @escaping CRRefreshHandler) {
         self.init(frame: .zero)
         self.handler  = handler
         self.animator = animator
     }
-    
     
     open override func didMoveToSuperview() {
         super.didMoveToSuperview()
@@ -100,17 +101,21 @@ open class CRRefreshHeaderView: CRRefreshComponent {
                     super.stop()
                     self.animator.refreshEnd(view: self, finish: true)
                     self.ignoreObserver(false)
+                    self.isEnding = false
                 }
             }
         }
         if animator.endDelay > 0 {
-            let delay =  DispatchTimeInterval.milliseconds(Int(animator.endDelay * 1000))
-            DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
-                beginStop()
-            })
-        }else {
+            if self.isEnding == false {
+                let delay =  DispatchTimeInterval.milliseconds(Int(animator.endDelay * 1000))
+                DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
+                    beginStop()
+                })
+            }
+        } else {
             beginStop()
         }
+        isEnding = true
     }
 
     open override func offsetChange(change: [NSKeyValueChangeKey : Any]?) {

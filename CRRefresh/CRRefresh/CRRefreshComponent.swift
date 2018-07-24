@@ -142,10 +142,6 @@ open class CRRefreshComponent: UIView {
     }
     
     public func ignoreObserver(_ ignore: Bool = false) {
-        // 会导致tabview下串
-//        if let scrollView = scrollView {
-//            scrollView.isScrollEnabled = !ignore
-//        }
         isIgnoreObserving = ignore
     }
     
