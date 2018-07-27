@@ -94,7 +94,11 @@ open class CRRefreshHeaderView: CRRefreshComponent {
             animator.refreshEnd(view: self, finish: false)
             // 调整scrollView的contentInset
             UIView.animate(withDuration: CRRefreshComponent.animationDuration, animations: {
-                scrollView.contentInset.top += self.insetTDelta - self.holdInsetTDelta
+                if #available(iOS 11.0, *) {
+                    scrollView.contentInset.top = 0
+                } else {
+                    scrollView.contentInset.top = self.insetTDelta - self.holdInsetTDelta
+                }
             }) { (finished) in
                 DispatchQueue.main.async {
                     self.state = .idle
