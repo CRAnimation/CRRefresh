@@ -86,6 +86,9 @@ open class CRRefreshFooterView: CRRefreshComponent {
         guard let scrollView = scrollView else { return }
         animator.refreshEnd(view: self, finish: false)
         UIView.animate(withDuration: CRRefreshComponent.animationDuration, delay: 0, options: .curveLinear, animations: {
+            let offsetY = scrollView.contentOffset.y - self.bounds.size.height
+            let contentOffset = CGPoint(x: scrollView.contentOffset.x, y: offsetY)
+            scrollView.setContentOffset(contentOffset, animated: false)
         }, completion: { (finished) in
             if self.noMoreData == false {
                 self.state = .idle
