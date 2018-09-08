@@ -44,6 +44,7 @@ class RamotionBallLayer: CALayer {
         let circleWidth = min(frame.size.width, frame.size.height)
         circleLayer = CircleLayer(size: circleWidth, moveUpDist: moveUpDist, frame: frame, color: color)
         addSublayer(circleLayer)
+        isHidden = true
     }
     
     override init(layer: Any) {
