@@ -98,6 +98,11 @@ class RamotionBounceLayer: CALayer {
         }
     }
     
+    func clear() {
+        displayLink?.invalidate()
+        displayLink = nil
+    }
+    
     //MARK: Private Methods
     @objc private func displayAction() {
         let offY = ballLayer.circleLayer.presentation()?.frame.origin.y

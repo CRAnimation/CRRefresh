@@ -44,7 +44,7 @@ class RamotionWaveLayer: CALayer, CAAnimationDelegate {
     var isAnimation: Bool = false
     // 计时器
     var displayLink: CADisplayLink?
-    
+
     deinit {
         displayLink?.invalidate()
         displayLink = nil
@@ -114,9 +114,6 @@ class RamotionWaveLayer: CALayer, CAAnimationDelegate {
         endBoundAnimation()
     }
     
-    //MARK: Override
-    
-    
     //MARK: Privater Methods
     private func wavePath(x: CGFloat, y: CGFloat) -> CGPath {
         let w = frame.width
@@ -127,7 +124,7 @@ class RamotionWaveLayer: CALayer, CAAnimationDelegate {
             path.addLine(to: .init(x: w, y: y))
             path.addLine(to: .init(x: 0, y: y))
             path.addLine(to: .zero)
-        }else {
+        } else {
             path.move(to: .zero)
             path.addLine(to: .init(x: w, y: 0))
             path.addLine(to: .init(x: w, y: execute))
@@ -149,14 +146,14 @@ class RamotionWaveLayer: CALayer, CAAnimationDelegate {
     }
     
     @objc private func displayAction() {
-            if let frame = reference.layer.presentation()?.frame {
-                DispatchQueue.global().async {
-                    let path = self.displayWavePath(x: 0, y: frame.origin.y + referenceHeight/2)
-                    DispatchQueue.main.async {
-                        self.waveLayer.path = path
-                    }
+        if let frame = reference.layer.presentation()?.frame {
+            DispatchQueue.global().async {
+                let path = self.displayWavePath(x: 0, y: frame.origin.y + referenceHeight/2)
+                DispatchQueue.main.async {
+                    self.waveLayer.path = path
                 }
             }
+        }
     }
     
     private func addDisPlay() {

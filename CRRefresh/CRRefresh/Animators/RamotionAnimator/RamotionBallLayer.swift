@@ -31,6 +31,10 @@ private var upDuration: Double = 0.5
 
 class RamotionBallLayer: CALayer {
     
+    deinit {
+        circleLayer.stopAnimation()
+    }
+    
     var circleLayer: CircleLayer!
     
     init(frame: CGRect, duration: CFTimeInterval, moveUpDist: CGFloat, color: UIColor = .white) {
@@ -54,16 +58,20 @@ class RamotionBallLayer: CALayer {
         circleLayer.startAnimation()
     }
     
-    func endAnimation(_ complition:(()->())? = nil) {
+    func endAnimation(_ complition: (()-> Void)? = nil) {
         circleLayer.endAnimation(complition)
     }
 }
 
 class CircleLayer :CAShapeLayer, CAAnimationDelegate {
     
+    deinit {
+        spiner?.stopAnimation()
+    }
+    
     var moveUpDist: CGFloat = 0
     var spiner: SpinerLayer?
-    var didEndAnimation: (()->())?
+    var didEndAnimation: (() -> Void)?
     
     init(size: CGFloat, moveUpDist: CGFloat, frame: CGRect, color: UIColor = UIColor.white) {
         self.moveUpDist = moveUpDist
@@ -96,8 +104,8 @@ class CircleLayer :CAShapeLayer, CAAnimationDelegate {
     
     func startAnimation() {
         moveUp(moveUpDist)
-        DispatchQueue.main.asyncAfter(deadline: .now() + upDuration) {
-            self.spiner?.animation()
+        DispatchQueue.main.asyncAfter(deadline: .now() + upDuration) { [weak self] in
+            self?.spiner?.animation()
         }
     }
     
@@ -107,11 +115,18 @@ class CircleLayer :CAShapeLayer, CAAnimationDelegate {
         didEndAnimation = complition
     }
     
+    func stopAnimation() {
+        spiner?.stopAnimation()
+        removeAllAnimations()
+        didEndAnimation?()
+    }
+    
     func moveUp(_ distance: CGFloat) {
         let move = CABasicAnimation(keyPath: "position")
         
         move.fromValue = NSValue(cgPoint: position)
-        move.toValue = NSValue(cgPoint: CGPoint(x: position.x, y: position.y - distance))
+        move.toValue = NSValue(cgPoint: CGPoint(x: position.x,
+                                                y: position.y - distance))
         
         move.duration = upDuration
         move.timingFunction = timeFunc
@@ -120,7 +135,6 @@ class CircleLayer :CAShapeLayer, CAAnimationDelegate {
         move.isRemovedOnCompletion = false
         add(move, forKey: move.keyPath)
     }
-    
     
     func moveDown(_ distance: CGFloat) {
         let move = CABasicAnimation(keyPath: "position")
@@ -145,7 +159,7 @@ class CircleLayer :CAShapeLayer, CAAnimationDelegate {
 }
 
 
-class SpinerLayer :CAShapeLayer, CAAnimationDelegate {
+class SpinerLayer: CAShapeLayer, CAAnimationDelegate {
     
     init(superLayerFrame: CGRect, ballSize: CGFloat, color: UIColor = UIColor.white) {
         super.init()

@@ -25,19 +25,19 @@
 
 import UIKit
 
-public class RamotionAnimator: UIView, CRRefreshProtocol {
+open class RamotionAnimator: UIView, CRRefreshProtocol {
     
-    public var view: UIView { return self }
+    open var view: UIView { return self }
     
-    public var insets: UIEdgeInsets = .zero
+    open var insets: UIEdgeInsets = .zero
     
-    public var trigger: CGFloat  = 140
+    open var trigger: CGFloat  = 140
     
-    public var execute: CGFloat  = 90
+    open var execute: CGFloat  = 90
     
-    public var endDelay: CGFloat = 0
+    open var endDelay: CGFloat = 0
     
-    public var hold: CGFloat     = 90
+    open var hold: CGFloat     = 90
 
     
     var bounceLayer: RamotionBounceLayer?
@@ -46,12 +46,17 @@ public class RamotionAnimator: UIView, CRRefreshProtocol {
     /// 球的颜色
     let ballColor: UIColor
     
+    deinit {
+        bounceLayer?.clear()
+    }
+    
     /// 初始化方法
     ///
     /// - Parameters:
     ///   - ballColor: 小球的颜色
     ///   - waveColor: 上方wave的颜色
-    public init(ballColor: UIColor = .white, waveColor: UIColor = .init(rgb: (140, 141, 178))) {
+    public init(ballColor: UIColor = .white,
+                waveColor: UIColor = .init(rgb: (140, 141, 178))) {
         self.ballColor = ballColor
         self.waveColor = waveColor
         super.init(frame: .zero)
@@ -69,12 +74,12 @@ public class RamotionAnimator: UIView, CRRefreshProtocol {
         return bounceLayer
     }
     
-    public func refreshBegin(view: CRRefreshComponent) {
+    open func refreshBegin(view: CRRefreshComponent) {
         bounceLayer(view: view)?.wave(execute)
         bounceLayer(view: view)?.startAnimation()
     }
     
-    public func refreshEnd(view: CRRefreshComponent, finish: Bool) {
+    open func refreshEnd(view: CRRefreshComponent, finish: Bool) {
         if !finish {
             bounceLayer(view: view)?.endAnimation()
         }else {
@@ -84,20 +89,20 @@ public class RamotionAnimator: UIView, CRRefreshProtocol {
         }
     }
     
-    public func refresh(view: CRRefreshComponent, progressDidChange progress: CGFloat) {
+    open func refresh(view: CRRefreshComponent, progressDidChange progress: CGFloat) {
         let offY = trigger * progress
         bounceLayer(view: view)?.wave(offY)
     }
     
-    public func refresh(view: CRRefreshComponent, stateDidChange state: CRRefreshState) {
+    open func refresh(view: CRRefreshComponent, stateDidChange state: CRRefreshState) {
         
     }
     
-    public func refreshWillEnd(view: CRRefreshComponent) {
+    open func refreshWillEnd(view: CRRefreshComponent) {
         
     }
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         self.ballColor = .white
         self.waveColor = .init(rgb: (140, 141, 178))
         super.init(frame: frame)

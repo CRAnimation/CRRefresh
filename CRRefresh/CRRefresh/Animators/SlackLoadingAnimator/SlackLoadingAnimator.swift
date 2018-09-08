@@ -25,19 +25,19 @@
 
 import UIKit
 
-public class SlackLoadingAnimator: UIView, CRRefreshProtocol {
+open class SlackLoadingAnimator: UIView, CRRefreshProtocol {
     
-    public var view: UIView { return self }
+    open var view: UIView { return self }
     
-    public var insets: UIEdgeInsets = .zero
+    open var insets: UIEdgeInsets = .zero
     
-    public var trigger: CGFloat = 60
+    open var trigger: CGFloat = 60
     
-    public var execute: CGFloat = 60
+    open var execute: CGFloat = 60
     
-    public var endDelay: CGFloat = 0
+    open var endDelay: CGFloat = 0
     
-    public var hold: CGFloat     = 60
+    open var hold: CGFloat     = 60
     
     var loadingView: WCLLoadingView = {
         let loadView = WCLLoadingView(frame: .init(x: 0, y: 0, width: 40, height: 40))
@@ -45,23 +45,23 @@ public class SlackLoadingAnimator: UIView, CRRefreshProtocol {
         return loadView
     }()
     
-    public func refreshBegin(view: CRRefreshComponent) {
+    open func refreshBegin(view: CRRefreshComponent) {
         loadingView.startAnimation()
     }
     
-    public func refreshEnd(view: CRRefreshComponent, finish: Bool) {
+    open func refreshEnd(view: CRRefreshComponent, finish: Bool) {
         loadingView.stopAnimation()
     }
     
-    public func refresh(view: CRRefreshComponent, progressDidChange progress: CGFloat) {
+    open func refresh(view: CRRefreshComponent, progressDidChange progress: CGFloat) {
         
     }
     
-    public func refresh(view: CRRefreshComponent, stateDidChange state: CRRefreshState) {
+    open func refresh(view: CRRefreshComponent, stateDidChange state: CRRefreshState) {
         
     }
     
-    public func refreshWillEnd(view: CRRefreshComponent) {
+    open func refreshWillEnd(view: CRRefreshComponent) {
     
     }
     
@@ -74,7 +74,7 @@ public class SlackLoadingAnimator: UIView, CRRefreshProtocol {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         let s = bounds.size
         let w = s.width

@@ -161,8 +161,6 @@ extension UIFont {
         if getSystemVersion() >= 9.0 {
             return UIFont.init(name: appFontLightName, size: fontSize) ?? UIFont.systemFont(ofSize: fontSize)
         }else {
-            let option:UIViewAnimationTransition = .flipFromLeft
-            print(option)
             return UIFont.systemFont(ofSize: fontSize)
         }
     }
