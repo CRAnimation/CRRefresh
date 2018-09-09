@@ -90,6 +90,10 @@ open class CRRefreshHeaderView: CRRefreshComponent {
             }
         }
         func beginStop() {
+            guard isEnding == false, isRefreshing else {
+                return
+            }
+            isEnding = true
             // 结束动画
             animator.refreshEnd(view: self, finish: false)
             // 调整scrollView的contentInset
@@ -115,7 +119,6 @@ open class CRRefreshHeaderView: CRRefreshComponent {
         } else {
             beginStop()
         }
-        isEnding = true
     }
 
     open override func offsetChange(change: [NSKeyValueChangeKey : Any]?) {

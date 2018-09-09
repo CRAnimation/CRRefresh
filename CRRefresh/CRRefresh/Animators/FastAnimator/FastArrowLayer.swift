@@ -147,15 +147,13 @@ class FastArrowLayer: CALayer,
     }
     
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        if flag {
-            if let anim = anim as? CABasicAnimation {
-                if anim.keyPath == "strokeStart" {
-                    arrowLayer?.isHidden = true
-                    addLineAnimation()
-                }else {
-                    lineLayer?.isHidden = true
-                    animationEnd?()
-                }
+        if let anim = anim as? CABasicAnimation {
+            if anim.keyPath == "strokeStart" {
+                arrowLayer?.isHidden = true
+                addLineAnimation()
+            }else {
+                lineLayer?.isHidden = true
+                animationEnd?()
             }
         }
     }

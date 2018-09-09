@@ -161,5 +161,6 @@ class RamotionBounceLayer: CALayer {
     private func removeDisPlay() {
         displayLink?.invalidate()
         displayLink = nil
+        print("removeDisPlay")
     }
 }

@@ -153,9 +153,7 @@ class CircleLayer :CAShapeLayer, CAAnimationDelegate {
     }
     
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        if flag {
-            didEndAnimation?()
-        }
+        didEndAnimation?()
     }
 }
 
