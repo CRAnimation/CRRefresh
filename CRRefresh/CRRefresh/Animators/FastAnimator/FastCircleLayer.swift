@@ -162,7 +162,7 @@ class FastCircleLayer: CALayer {
                     startAngle: CGFloat(Double.pi * 0.5),
                     endAngle: CGFloat((Double.pi * 0.5) - 0.1),
                     clockwise: false)
-      point.lineCap     = CAShapeLayerLineCap.round
+        point.lineCap     = CAShapeLayerLineCap.round
         point.lineWidth   = lineWidth*2
         point.fillColor   = UIColor.clear.cgColor
         point.strokeColor = pointColor.cgColor

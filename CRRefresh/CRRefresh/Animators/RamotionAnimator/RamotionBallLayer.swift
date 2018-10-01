@@ -132,7 +132,7 @@ class CircleLayer :CAShapeLayer, CAAnimationDelegate {
         move.duration = upDuration
         move.timingFunction = timeFunc
         
-      move.fillMode = CAMediaTimingFillMode.forwards
+        move.fillMode = CAMediaTimingFillMode.forwards
         move.isRemovedOnCompletion = false
         add(move, forKey: move.keyPath)
     }
@@ -146,7 +146,7 @@ class CircleLayer :CAShapeLayer, CAAnimationDelegate {
         move.duration = upDuration
         move.timingFunction = timeFunc
         
-      move.fillMode = CAMediaTimingFillMode.forwards
+        move.fillMode = CAMediaTimingFillMode.forwards
         move.isRemovedOnCompletion = false
         move.delegate = self
         add(move, forKey: move.keyPath)
@@ -174,7 +174,7 @@ class SpinerLayer: CAShapeLayer, CAAnimationDelegate {
         self.fillColor = nil
         self.strokeColor = color.cgColor
         self.lineWidth = 2
-      self.lineCap = CAShapeLayerLineCap.round
+        self.lineCap = CAShapeLayerLineCap.round
         
         self.strokeStart = 0
         self.strokeEnd = 0
