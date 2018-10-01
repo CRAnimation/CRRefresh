@@ -194,7 +194,7 @@ class RamotionWaveLayer: CALayer, CAAnimationDelegate {
     
     private func boundDownAnimation(x: CGFloat, y: CGFloat) {
         let bounce = CAKeyframeAnimation(keyPath: "transform.translation.y")
-      bounce.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
+        bounce.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
         bounce.duration = bounceDuration/2
         bounce.values = [
             y,

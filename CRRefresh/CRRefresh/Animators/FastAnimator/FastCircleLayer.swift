@@ -183,10 +183,10 @@ class FastCircleLayer: CALayer {
                       endAngle: CGFloat((Double.pi * 0.5) - 0.3),
                       clockwise: false)
         path.toValue = toPath.cgPath
-      path.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+        path.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         path.duration = 2
         path.isRemovedOnCompletion = false
-      path.fillMode = CAMediaTimingFillMode.forwards
+        path.fillMode = CAMediaTimingFillMode.forwards
         point.add(path, forKey: "path")
     }
     
