@@ -68,7 +68,7 @@ class FastArrowLayer: CALayer,
         lineLayer?.lineWidth   = lineWidth*2
         lineLayer?.strokeColor = color.cgColor
         lineLayer?.fillColor   = UIColor.clear.cgColor
-        lineLayer?.lineCap     = kCALineCapRound
+        lineLayer?.lineCap     = CAShapeLayerLineCap.round
         lineLayer?.path        = path.cgPath
         lineLayer?.strokeStart = 0.5
         addSublayer(lineLayer!)
@@ -84,8 +84,8 @@ class FastArrowLayer: CALayer,
         arrowLayer = CAShapeLayer()
         arrowLayer?.lineWidth   = lineWidth*2
         arrowLayer?.strokeColor = color.cgColor
-        arrowLayer?.lineCap     = kCALineCapRound
-        arrowLayer?.lineJoin    = kCALineJoinRound
+        arrowLayer?.lineCap     = CAShapeLayerLineCap.round
+        arrowLayer?.lineJoin    = CAShapeLayerLineJoin.round
         arrowLayer?.fillColor   = UIColor.clear.cgColor
         arrowLayer?.path        = path.cgPath
         addSublayer(arrowLayer!)
@@ -99,17 +99,17 @@ class FastArrowLayer: CALayer,
         start.fromValue = 0
         start.toValue   = 0.5
         start.isRemovedOnCompletion = false
-        start.fillMode  = kCAFillModeForwards
+        start.fillMode  = CAMediaTimingFillMode.forwards
         start.delegate    = self
-        start.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        start.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         
         let end = CABasicAnimation(keyPath: "strokeEnd")
         end.duration  = animationDuration
         end.fromValue = 1
         end.toValue   = 0.5
         end.isRemovedOnCompletion = false
-        end.fillMode  = kCAFillModeForwards
-        end.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        end.fillMode  = CAMediaTimingFillMode.forwards
+        end.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         
         arrowLayer?.add(start, forKey: "strokeStart")
         arrowLayer?.add(end, forKey: "strokeEnd")
@@ -129,8 +129,8 @@ class FastArrowLayer: CALayer,
         start.fromValue = 0.5
         start.toValue = 0
         start.isRemovedOnCompletion = false
-        start.fillMode  = kCAFillModeForwards
-        start.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        start.fillMode  = CAMediaTimingFillMode.forwards
+        start.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         start.duration  = animationDuration/2
         lineLayer?.add(start, forKey: "strokeStart")
         
@@ -140,9 +140,9 @@ class FastArrowLayer: CALayer,
         end.fromValue = 1
         end.toValue   = 0.03
         end.isRemovedOnCompletion = false
-        end.fillMode  = kCAFillModeForwards
+        end.fillMode  = CAMediaTimingFillMode.forwards
         end.delegate  = self
-        end.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        end.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         lineLayer?.add(end, forKey: "strokeEnd")
     }
     

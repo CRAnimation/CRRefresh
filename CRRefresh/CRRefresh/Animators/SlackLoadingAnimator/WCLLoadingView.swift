@@ -159,7 +159,7 @@ class WCLLoadingView: UIView, CAAnimationDelegate {
         for i in 0...3 {
             let line:CAShapeLayer = CAShapeLayer()
             line.lineWidth   = lineWidth
-            line.lineCap     = kCALineCapRound
+            line.lineCap     = CAShapeLayerLineCap.round
             line.opacity     = 0.8
             line.strokeColor = colors[i].cgColor
             line.path        = getLinePath(startPoint[i], endPoint: endPoint[i]).cgPath
@@ -193,7 +193,7 @@ class WCLLoadingView: UIView, CAAnimationDelegate {
         angleAnimation.beginTime           = CACurrentMediaTime()
         angleAnimation.fromValue           = angle(-30)
         angleAnimation.toValue             = angle(690)
-        angleAnimation.fillMode            = kCAFillModeForwards
+        angleAnimation.fillMode            = CAMediaTimingFillMode.forwards
         angleAnimation.isRemovedOnCompletion = false
         angleAnimation.duration            = duration
         angleAnimation.delegate            = self
@@ -208,7 +208,7 @@ class WCLLoadingView: UIView, CAAnimationDelegate {
         let lineAnimationOne                 = CABasicAnimation.init(keyPath: "strokeEnd")
         lineAnimationOne.beginTime           = CACurrentMediaTime()
         lineAnimationOne.duration            = duration/2
-        lineAnimationOne.fillMode            = kCAFillModeForwards
+        lineAnimationOne.fillMode            = CAMediaTimingFillMode.forwards
         lineAnimationOne.isRemovedOnCompletion = false
         lineAnimationOne.fromValue           = 1
         lineAnimationOne.toValue             = 0
@@ -230,7 +230,7 @@ class WCLLoadingView: UIView, CAAnimationDelegate {
             let lineAnimationTwo                   = CABasicAnimation.init(keyPath: keypath)
             lineAnimationTwo.beginTime             = CACurrentMediaTime() + duration/2
             lineAnimationTwo.duration              = duration/4
-            lineAnimationTwo.fillMode              = kCAFillModeForwards
+            lineAnimationTwo.fillMode              = CAMediaTimingFillMode.forwards
             lineAnimationTwo.isRemovedOnCompletion = false
             lineAnimationTwo.autoreverses          = true
             lineAnimationTwo.fromValue             = 0
@@ -253,7 +253,7 @@ class WCLLoadingView: UIView, CAAnimationDelegate {
             let lineAnimationTwo                   = CABasicAnimation.init(keyPath: keypath)
             lineAnimationTwo.beginTime             = CACurrentMediaTime() + duration/2
             lineAnimationTwo.duration              = duration/4
-            lineAnimationTwo.fillMode              = kCAFillModeForwards
+            lineAnimationTwo.fillMode              = CAMediaTimingFillMode.forwards
             lineAnimationTwo.isRemovedOnCompletion = false
             lineAnimationTwo.autoreverses          = true
             lineAnimationTwo.fromValue             = 0
@@ -275,7 +275,7 @@ class WCLLoadingView: UIView, CAAnimationDelegate {
         let lineAnimationFour                   = CABasicAnimation.init(keyPath: "strokeEnd")
         lineAnimationFour.beginTime             = CACurrentMediaTime() + duration
         lineAnimationFour.duration              = duration/4
-        lineAnimationFour.fillMode              = kCAFillModeForwards
+        lineAnimationFour.fillMode              = CAMediaTimingFillMode.forwards
         lineAnimationFour.isRemovedOnCompletion = false
         lineAnimationFour.fromValue             = 0
         lineAnimationFour.toValue               = 1

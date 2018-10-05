@@ -76,7 +76,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     func addNavDefaultBackButton() -> UIButton {
         let leftBt = UIButton()
         let btImage = UIImage.init(named: "nav_back")
-        leftBt.setImage(btImage, for: UIControlState())
+        leftBt.setImage(btImage, for: UIControl.State())
         leftBt.frame.size = (btImage?.size)!
         leftBt.addTarget(self, action: #selector(leftButtonAction(_:)), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: leftBt)
