@@ -155,12 +155,11 @@ class RamotionBounceLayer: CALayer {
     
     private func addDisPlay() {
         displayLink = CADisplayLink(target: self, selector: #selector(displayAction))
-        displayLink?.add(to: .main, forMode: .commonModes)
+        displayLink?.add(to: .main, forMode: .common)
     }
     
     private func removeDisPlay() {
         displayLink?.invalidate()
         displayLink = nil
-        print("removeDisPlay")
     }
 }

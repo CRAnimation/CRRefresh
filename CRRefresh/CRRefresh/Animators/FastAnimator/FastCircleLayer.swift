@@ -162,7 +162,7 @@ class FastCircleLayer: CALayer {
                     startAngle: CGFloat(Double.pi * 0.5),
                     endAngle: CGFloat((Double.pi * 0.5) - 0.1),
                     clockwise: false)
-        point.lineCap     = kCALineCapRound
+        point.lineCap     = CAShapeLayerLineCap.round
         point.lineWidth   = lineWidth*2
         point.fillColor   = UIColor.clear.cgColor
         point.strokeColor = pointColor.cgColor
@@ -183,10 +183,10 @@ class FastCircleLayer: CALayer {
                       endAngle: CGFloat((Double.pi * 0.5) - 0.3),
                       clockwise: false)
         path.toValue = toPath.cgPath
-        path.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        path.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         path.duration = 2
         path.isRemovedOnCompletion = false
-        path.fillMode = kCAFillModeForwards
+        path.fillMode = CAMediaTimingFillMode.forwards
         point.add(path, forKey: "path")
     }
     

@@ -61,7 +61,7 @@ open class NormalHeaderAnimator: UIView, CRRefreshProtocol {
     }()
     
     fileprivate let indicatorView: UIActivityIndicatorView = {
-        let indicatorView = UIActivityIndicatorView.init(activityIndicatorStyle: .gray)
+        let indicatorView = UIActivityIndicatorView.init(style: .gray)
         indicatorView.isHidden = true
         return indicatorView
     }()
@@ -115,7 +115,7 @@ open class NormalHeaderAnimator: UIView, CRRefreshProtocol {
         case .pulling:
             titleLabel.text = releaseToRefreshDescription
             self.setNeedsLayout()
-            UIView.animate(withDuration: 0.2, delay: 0.0, options: UIViewAnimationOptions(), animations: {
+            UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions(), animations: {
                 [weak self] in
                 self?.imageView.transform = CGAffineTransform(rotationAngle: 0.000001 - CGFloat(Double.pi))
             }) { (animated) in }
@@ -123,7 +123,7 @@ open class NormalHeaderAnimator: UIView, CRRefreshProtocol {
         case .idle:
             titleLabel.text = pullToRefreshDescription
             self.setNeedsLayout()
-            UIView.animate(withDuration: 0.2, delay: 0.0, options: UIViewAnimationOptions(), animations: {
+            UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions(), animations: {
                 [weak self] in
                 self?.imageView.transform = CGAffineTransform.identity
             }) { (animated) in }
