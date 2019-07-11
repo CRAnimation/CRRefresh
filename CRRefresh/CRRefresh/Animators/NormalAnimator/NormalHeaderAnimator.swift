@@ -45,6 +45,12 @@ open class NormalHeaderAnimator: UIView, CRRefreshProtocol {
     open var execute: CGFloat  = 60.0
     open var endDelay: CGFloat = 0
     public var hold: CGFloat   = 60
+  
+    open var indicatorColor: UIColor = .gray {
+      didSet {
+        indicatorView.color = indicatorColor
+      }
+    }
 
     fileprivate let imageView: UIImageView = {
         let imageView = UIImageView.init()
@@ -61,7 +67,7 @@ open class NormalHeaderAnimator: UIView, CRRefreshProtocol {
     }()
     
     fileprivate let indicatorView: UIActivityIndicatorView = {
-        let indicatorView = UIActivityIndicatorView.init(style: .gray)
+        let indicatorView = UIActivityIndicatorView()
         indicatorView.isHidden = true
         return indicatorView
     }()
