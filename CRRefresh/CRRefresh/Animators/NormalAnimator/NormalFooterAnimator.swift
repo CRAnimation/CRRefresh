@@ -88,6 +88,8 @@ open class NormalFooterAnimator: UIView, CRRefreshProtocol {
     
     open func refresh(view: CRRefreshComponent, stateDidChange state: CRRefreshState) {
         switch state {
+        case .idle:
+            titleLabel.text = loadingMoreDescription
         case .refreshing :
             titleLabel.text = loadingDescription
             break
