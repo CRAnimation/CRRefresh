@@ -66,10 +66,16 @@ open class CRRefreshHeaderView: CRRefreshComponent {
         insets.top          += animator.execute
         insetTDelta          = -animator.execute
         holdInsetTDelta      = -(animator.execute - animator.hold)
-        UIView.animate(withDuration: CRRefreshComponent.animationDuration, animations: { 
+        var point = scrollView.contentOffset;
+        point.y = -insets.top
+        UIView.animate(withDuration: CRRefreshComponent.animationDuration, animations: {
+            
             scrollView.contentOffset.y = self.previousOffsetY
             scrollView.contentInset    = insets
-            scrollView.contentOffset.y = -insets.top
+//            scrollView.contentOffset.y = -insets.top
+            scrollView.setContentOffset(point, animated: false);
+            
+            
         }) { (finished) in
             DispatchQueue.main.async {
                 self.handler?()

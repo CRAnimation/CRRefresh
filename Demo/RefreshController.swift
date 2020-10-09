@@ -78,10 +78,13 @@ class RefreshController: BaseViewController {
             print("开始加载")
             DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                 self?.count += 10
-                self?.tableView.cr.noticeNoMoreData()
+                self?.tableView.cr.endLoadingMore()
                 self?.tableView.reloadData()
             })
         }
+        
+        tableView.isPagingEnabled = true
+        
     }
     
     //MARK: Override
