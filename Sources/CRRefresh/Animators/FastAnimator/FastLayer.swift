@@ -37,12 +37,6 @@ class FastLayer: CALayer {
 
     let lineWidth: CGFloat
     
-    //MARK: Public Methods
-    
-    
-    //MARK: Override
-    
-    
     //MARK: Initial Methods
     init(frame: CGRect, color: UIColor = .init(rgb: (214, 214, 214)), arrowColor: UIColor = .init(rgb: (165, 165, 165)), lineWidth: CGFloat = 1) {
         self.color      = color
@@ -57,6 +51,13 @@ class FastLayer: CALayer {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override init(layer: Any) {
+        color = .init(rgb: (214, 214, 214))
+        arrowColor = .init(rgb: (165, 165, 165))
+        lineWidth = 1
+        super.init(layer: layer)
     }
     
     //MARK: Privater Methods
