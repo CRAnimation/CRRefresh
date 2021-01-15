@@ -110,7 +110,7 @@ open class CRRefreshFooterView: CRRefreshComponent {
     open override func sizeChange(change: [NSKeyValueChangeKey : Any]?) {
         guard let scrollView = scrollView else { return }
         super.sizeChange(change: change)
-        let targetY = scrollView.contentSize.height + scrollViewInsets.bottom
+        let targetY = scrollView.contentSize.height
         if self.frame.origin.y != targetY {
             var rect = self.frame
             rect.origin.y = targetY
